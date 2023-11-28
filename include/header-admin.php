@@ -11,7 +11,7 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle color-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../img/staff/ballaho.png" class="rounded-circle me-1" alt="User Image" width="30px" height="30px"">
+                            <img src="../imgjd/staff/ballaho.png" class="rounded-circle me-1" alt="User Image" width="30px" height="30px">
                             User Name
                         </a>
                         <ul class="dropdown-menu dropdown-profile" aria-labelledby="navbarDropdown">

@@ -7,5 +7,6 @@
     <link href="../vendor/dataTable-1.13.6/datatables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../vendor/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title><?= $title ?></title>
 </head>

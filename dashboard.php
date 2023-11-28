@@ -1,27 +1,19 @@
-<?php
-    session_start();
-
-    if(!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] != 'staff')){
-        header('location: index.php');
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
     $title = 'Dashboard';
     $dashboard_page = 'active';
-    require_once('../include/head.php');
+    require_once('./include/head.php');
 ?>
 <body>
     <?php
-        require_once('../include/header-admin.php')
+        require_once('./include/header-admin.php')
     ?>
     <main>
         <div class="container-fluid">
             <div class="row">
                 <?php
-                    require_once('../include/sidepanel.php')
+                    require_once('./include/sidepanel.php')
                 ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <h1 class="h3 brand-color pt-3">Overview</h1>
