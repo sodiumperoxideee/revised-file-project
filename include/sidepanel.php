@@ -15,25 +15,31 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link <?= $product_page ?>" href="products.php">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     Users
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?= $customer_page ?>" href="#">
-                    <i class="fa-solid fa-user-doctor"></i>
+                    <i class="fa fa-users" aria-hidden="true"></i>
                     Vets
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link <?= $reports_page ?>" href="#">
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    Reports
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link <?= $staff_page ?>" href="staff.php">
-                    <i class="fa-solid fa-suitcase-medical"></i>
+                    <i class="fa fa-user" aria-hidden="true"></i>
                     Services
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?= $staff_page ?>" href="staff2.php">
-                    <i class="fa-solid fa-house-medical"></i>
+                    <i class="fa fa-user" aria-hidden="true"></i>
                     Clinic Facilities
                 </a>
             </li>

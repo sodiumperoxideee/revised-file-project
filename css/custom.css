@@ -1,0 +1,1114 @@
+*{
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+:root{
+    --clr-1: #001C30;
+    --clr-2: #176B87;
+    --clr-3: #64CCC5;
+    --clr-4: #dffffc;
+    --clr-5: #d2f4ff;
+    --clr-6: #ff2635;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+footer i{
+    font-size: 1.5rem;
+}
+
+
+.logo{
+    height: 9vh;
+}
+
+.navbar{
+    background-color: white !important; 
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5) !important;
+    z-index: 999999;
+}
+
+.navbar ul{
+    margin: 0px;
+}
+
+.nav-link{
+    color: black !important;
+}
+
+.nav-link.active{
+    font-weight: bold;
+    color: var(--clr-1)!important;
+}
+
+.nav-link:hover{
+    background-color: var(--clr-1);
+    color: white !important;
+    border-radius: 6px;
+}
+
+.dropdown-item:hover{
+    background-color: var(--clr-1);
+    color: white !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 28, 48)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.dropdown-menu{
+    border-radius: 10px;
+}
+
+.section-0{
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgba(8, 45, 56, 0.9)), url('../img/landingpage.jpg');
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.section-0 .home-headings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.section-0 h1{
+    font-weight: bold;
+    font-size: 4em;
+}
+
+.section-0 h5{
+    display: flex;
+    align-items: center;
+    margin: 0 18% 0;
+
+}
+
+.home-space{
+    display: flex;
+    flex-direction: column;
+    padding: 4% 0;
+    margin: 4% 4%;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #d6d6d6;
+    border-bottom: 2px solid #d6d6d6;
+}
+
+
+.home-third .row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-third .col{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-col-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5);
+    border-radius: 2%;
+}
+
+.home-col-container p, .home-col-container h4{
+    margin: 5%;
+    text-align: center;
+}
+
+.home-col-icon{
+    font-size: 3em;
+    color: var(--clr-6);
+    background-color: #c0c0c0;
+    border-radius: 10%;
+}
+
+.home-services-link{
+    text-decoration: none;
+    color: #000;
+}
+
+.home-services-link:hover{
+    background-color: var(--clr-1);
+    color: white;
+    border-radius: 2%;
+}
+
+
+.home-vets-container{   
+    display: flex;
+    margin: 5% 0;
+    padding: 5% 0;
+    border-top: 2px solid #d6d6d6;
+    border-bottom: 2px solid #d6d6d6;
+
+}
+
+.home-vets-section{
+    background-color: var(--clr-1);
+    height: calc(100vh - 250px);
+}
+
+.home-vets-section p{
+    text-align: justify;
+}
+
+
+.btn.home-vets:hover{
+    background-color: var(--clr-6) !important;
+}
+
+.col.first{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.col.second img{
+    max-width: 100%;
+    height: auto;
+}
+
+.homeBtns{
+    display: flex;
+    justify-content: center;
+}
+
+.homeBtn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    background-color: var(--clr-2);
+    color: white !important;
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5);
+}
+
+.btn:hover{
+    background-color: var(--clr-1) !important;
+    border: none;
+}
+
+.emergencyBtn{
+    background-color: var(--clr-6);
+}
+
+div.section-2{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.90)), url('../img/bldg.avif');
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5);
+    height: calc(100vh - 140px);
+}
+
+.section-2 img{
+    border-radius: 25px;
+}
+
+
+.section-2 .row{
+    color: white;
+    display: flex;
+    align-content: flex-start;
+    border-radius: 25px;
+    background-size: contain;
+    background-position: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.section-2 h1{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.section-2 p{
+    margin: 0 10%;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+.card{
+    text-align: center;
+    box-shadow: 0 1px 2px rgb(0,0,0,0.5);
+    width: 18rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.section-3{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.section-3 h1{
+    text-align: center;
+}
+
+.card-img-top{
+    height: calc(100vh - 450px);
+    object-fit: cover;
+}
+
+
+.section-3 .row{
+    align-self: center;
+    display: flex;
+    border-radius: 25px;
+    background-size: contain;
+    background-position: center;
+    justify-content: center;
+}
+
+.map-container {
+    padding: 15px; /* Add padding for better spacing */
+  }
+  
+
+/* Media query for screens up to 320px (mobile) */
+@media (max-width: 767px) {
+    img.logo{  
+        height: 6vh;
+        max-width: 100%;
+    }
+
+    .section-0 h1 {
+      font-size: 3em; /* Reduce font size for smaller screens */
+    }
+    
+    .section-0 h5 {
+      margin: 0 5%; /* Adjust margins for smaller screens */
+    }
+  
+    .homeBtns {
+      flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+  
+    .homeBtn {
+      margin: 5px 0; /* Add space between buttons */
+    }
+    
+    .home-headings{
+        margin: 1em;
+    }
+
+    h1.home-headings{
+        font-size: .90em;
+    }
+
+    .home-headings h5{
+        font-size: 1.025em;
+    }
+
+    footer .col{
+
+        width: 100%;
+    }
+
+    footer .col.one, footer .col.two{
+        border-right: none;
+    }
+
+    footer h1{
+        font-size: 1.5em;
+    }
+
+    footer h4{
+        font-size: 1em !important;
+    }
+
+    footer h5, footer a{
+        font-size: 1em;
+    }
+
+    footer p{
+        font-size: .8em;
+    }
+
+    footer div.col.one{
+        padding: 0 !important;
+        margin: 5% !important;
+    }
+
+    .home-space{
+        margin: 5% 5% 0 5%;
+    }
+    .home-space p, .home-space h1{
+        text-align: center;
+    }
+
+    .home-space h1{
+        font-size: 1.6em;
+    }
+
+    .home-col-container{
+        margin: 5% 0;
+
+    }
+
+    .home-vets-container{
+        border-top: 2px solid #d6d6d6;
+        border-bottom: 2px solid #d6d6d6;
+    }
+    
+
+    .home-vets-container h1{
+        font-size: 1.2em;
+    }
+
+    .home-vets-container p{
+        font-size: .9em;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0 ;
+    }
+
+    h1 .home-vets-section{
+        padding-top: 5em;
+        font-size: 1.6em;
+    }
+
+    .section-2{
+        margin: 0;
+        padding: 0;
+    }
+
+    .section-2 .btn{
+        font-size: 1em !important;
+        padding: 5%!important;
+    }
+        
+    .section-2 h1{
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .section-2 p{
+        margin: 0;
+        font-size: .8em;
+        text-align: justify;
+    }
+
+    input#datepicker{
+        margin: 0;
+        width: 150px;
+    }
+
+
+    .booking-title-text h1{
+        font-size: 2em !important;
+    }
+
+    .booking-container h4{
+        font-size: 1em !important;
+        
+    }
+
+    .calendar-container{
+        align-content: center;
+        padding: 5% 10%!important;
+    }
+
+    .booking-title-text p{
+        font-size: 1em !important;
+    }
+
+
+}
+
+@media (min-width: 769px) {
+
+}
+  
+  
+
+footer .col.one{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+footer h1{
+    color: white;
+    font-family:cursive;
+    text-align: center;
+}
+
+footer h4{
+    font-size: 1.3rem;
+    color: var(--clr-4);
+    text-align: center;
+}
+
+footer p{
+    color: white;
+}
+
+footer{
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5);
+    background-color: var(--clr-1);
+    overflow: hidden;
+}
+
+footer h5{
+    color: var(--clr-6);
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--clr-3);
+}
+
+footer a:hover{
+    color: var(--clr-6);
+}
+
+footer i{
+    height: 25px;
+    width: 25px;
+}
+
+/*SIGN UP*/
+
+.signup, .login{
+    height: calc(100vh - 84px);
+    justify-content: center;
+}
+
+.admin-login, .admin-login .login-left, .login-right{
+    height: 100vh !important;
+    justify-content: center;
+}
+
+.admin-login .login-left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background: url('../img/wade-austin-ellis-FtuJIuBbUhI-unsplash.jpg');
+    background-size: cover;
+    background-position: right;
+}
+
+.signup-right h1, .login-right h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.signup-left h1, .login-left h1{
+    font-size: 4rem;
+}
+
+.signup-left p, .login-left p{
+    font-size: 1.1rem;
+}
+
+.signup-left{
+    height: calc(100vh - 84px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background: url('../img/krista-mangulsone-9gz3wfHr65U-unsplash.jpg');
+    background-size: cover;
+    background-position: left;
+}
+
+.signup-container{
+    margin: 0 20%;
+}
+
+/*END
+OF SIGN UP*/
+
+
+
+/*LOG IN */
+
+.login-left{
+    height: calc(100vh - 84px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background: url('../img/loginwallp.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 60%;
+}
+
+.alr{
+    padding-top: 10%;
+}
+
+
+.login-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-right form{
+    width: 100%;
+}
+
+.forgotpass{
+    color: var(--clr-2);
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.login-user, .signup-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*END 
+OF LOG IN*/
+
+
+/*SERVICES*/
+
+.services-body {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(100, 204, 197, 0.3)), url('../img/dog.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cat.services-body  {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(100, 204, 197, 0.3)), url(../img/cat.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services h1{
+    font-size: 4em;
+    font-weight: bold;
+    color: white !important;
+    text-shadow: 2px 2px #000000;
+}
+
+.services-nav{
+    display: flex;
+    width: 80vw;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: 2px 2px 4px 4px rgb(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.services-nav .nav-link{
+    color: white !important;
+}
+
+.services-nav .active{
+    border-bottom: var(--clr-3) 3px solid;
+}
+
+
+.pet-care-dogs{
+    display: flex;
+}
+
+.pet-care-dogs h1{
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px #000000;
+}
+
+.pet-care-dogs .card{
+    border-radius: 2%;
+}
+
+.pet-care-dogs .card img{
+    padding: 5%;
+    border-radius: 7%;
+}
+
+/*END 
+OF SERVICES*/
+
+/*BOOK*/
+
+.booking-title{
+    background-image: linear-gradient(to top, rgba(138, 138, 138, 0), rgba(60, 101, 114, 0.9)), url("../img/calendar.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 5%;
+}
+
+.booking-title-text h1{
+    font-size: 4em;
+}
+
+.booking-title-text p{
+    font-size: 1.2em;
+}
+
+.booking-body{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+}
+
+
+.booking-container .btn{
+    margin: 0 2% 0 2%;
+}
+
+.booking-body h1{
+    color: var(--clr-1);
+    text-align: center;
+}
+
+.booking-container{
+    box-shadow: 2px 2px 4px 4px rgb(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #001C30;
+    max-width: 100%;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.booking-container .submit{
+    display: flex;
+    justify-content: center;
+}
+
+.booking-container .submit-btn{
+    padding: 2% 5%;
+}
+
+form.booking-container, .booking-container form{
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.calendar-container .input{
+    padding: 200vw;
+}
+
+#scheduletime{
+    font-size: 1.15em;
+    padding: 1%;
+    display: flex;
+    width: 100%;
+}
+
+.bookbtn{
+    border: none;
+}
+
+.schedule div.row{
+    display: flex;
+    align-items: center !important;
+}
+
+.schedule{
+    box-shadow: 2px 2px 4px 4px rgb(0,0,0,0.1);
+    background-color: var(--clr-1);
+    color: white!important;
+
+}
+
+.modal-dialog {
+    justify-self: center;
+    align-self: center;
+}
+
+/*END 
+OF BOOK*/
+
+/*EMERGENCY CARE*/
+
+#emergency-care {
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.70)), url("../img/emergency-care.avif");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.content {
+    background-color:#63050b9d;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.content-container {
+    padding: 30px;
+}
+
+.icon {
+    font-size: 0.8em;
+    line-height: 150%;
+}
+
+.urgent {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardibee {
+    background-color: #001C30;
+    border-radius: 5px;
+    height: 50vh;
+    padding: 20px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.urgency {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.emergency-container p {
+    text-align: justify;
+}
+
+.emergency-faci {
+    background-color: #001C30;
+}
+
+/*END 
+OF EMERGENCY CARE*/
+
+
+
+/*CLINIC FACILITIES*/
+
+.fluid {
+    background-image: linear-gradient(to top, rgba(138, 138, 138, 0), rgba(60, 101, 114, 0.9)), url('../img/bldg.avif');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 70px);
+    padding: 9%;
+}
+  
+.fluid-square {
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    padding: 5%;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+  
+.fluid-square p {
+    text-align: justify;
+}
+
+.facilities {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#clinic-facilities {    
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+  
+.container-card {
+    background-color: #fdfdfd;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5);
+}
+.learn-more-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100; 
+    background-color: #001C30;
+    color: rgb(26, 25, 25);
+    padding: 5px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.container-card:hover {
+    filter: brightness(60%);
+}
+
+.container-card:hover .learn-more-btn {
+    display: block;
+}
+
+.container-card img {
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #64CCC5;
+    color: #000;
+}
+
+.modal-content {
+    color: black;
+}
+
+.loc {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 2% 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.location {
+    padding: 0 0 9% 0;
+}
+
+
+
+/*END
+OF CLINIC FACILITIES*/
+
+
+
+/*VETERINARIANS*/
+
+.veterinarians-title{
+    background-image: linear-gradient(to bottom, rgba(138, 138, 138, 0), rgba(0, 16, 20, 0.9)), url("../img/veterinarians.webp");
+    background-size: cover;
+    background-position: top;
+    padding: 15%;
+}
+
+.veterinarians-title-text h1{
+    font-size: 4em;
+}
+
+.veterinarians-title-text p{
+    font-size: 1.2em;
+}
+
+.vet-content {
+    background-color:#001C30;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: -5em;
+    color: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+    text-align: justify;
+    overflow: hidden;
+}
+
+.vet-content-container {
+    padding: 30px;
+}
+
+.vet-name{
+    border-bottom: 1px solid #847878c8;
+    border-top: 1px solid #847878c8;
+}
+
+.vet-pic img {
+    border-radius: 5px;
+}
+
+.container-board {
+    padding: 10%;
+}
+
+p span {
+    color: var(--clr-);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-fluid {
+    max-width: 50%;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.justified-p {
+    text-align: justify;
+}
+
+.img-veticap {
+    max-width: 100%;
+}
+
+.carousel-image {
+    width: 70%;
+  }
+
+
+.overlay {
+    border: #001C30 5px solid;
+    background-color: #001C30;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+  
+/*END
+OF VETERINARIANS*/
+
+.forgot-container{
+    margin: 7% 20% ;
+    background-color: white;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5);
+    
+}
+
+.tab-pane{
+    box-shadow: 0 1px 4px rgb(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: white;
+}
+
+a#account-tab.nav-link.active:hover{
+    background-color: var(--clr-1);
+    color: white;
+}
+
+.pane-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for the user profile container */
+.profile-container {
+    text-align: center;
+}
+
+/* Style for the user profile picture container */
+.profile-picture-container {
+    display: inline-block;
+    position: relative;
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Adjust the size as needed */
+    overflow: hidden;
+    border-radius: 50%; /* Display as a circle */
+}
+
+/* Style for the user profile picture */
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Style for the "Change" button */
+.change-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Hidden file input to trigger file selection dialog */
+input[type="file"] {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+.acc-history-container{
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgb(0,0,0,0.5);
+}
+
+.profile-container{
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.change-button{
+    background-color: transparent;
+    color: #007bff;
+    text-decoration: underline;
+}
+
