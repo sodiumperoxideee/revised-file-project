@@ -47,9 +47,6 @@
                 </div>
                 
                 <input class="btn px-3 py-2 mt-4" type="submit" value="Login">
-                <p class="my-4 text-center">or with</p>
-                <input class="btn px-5 py-2 my-2" type="submit" value="Facebook">
-                <input class="btn px-5 py-2 my-2" type="submit" value="Google">
               </form>
             </div>
         </div>
