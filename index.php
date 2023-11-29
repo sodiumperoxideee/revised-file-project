@@ -2,11 +2,11 @@
 <html lang="en">
 <?php
     $title = 'Home - Welcome to Purrpaws Veterinary Clinic';
-    require_once('./include/head.php');
+    require_once 'include/head.php';
 ?>
 <body>                                                     
   <?php
-    require_once('./include/header-user.php')
+    require_once 'include/header-user.php';
   ?>
 
   <main>
@@ -129,7 +129,7 @@
     </div>
   </main>
   <?php
-    require_once('./include/user-footer.php')
+    require_once('include/user-footer.php')
   ?>
 </body>
 <script src="script.js"></script>
