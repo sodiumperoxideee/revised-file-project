@@ -532,7 +532,6 @@ footer i{
 }
 
 .signup-left{
-    height: calc(100vh - 84px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -542,9 +541,15 @@ footer i{
     background-position: left;
 }
 
-.signup-container{
-    margin: 0 20%;
+.user-signup-container{
+    margin: 0 10%;
 }
+
+
+.pet-signup-container{
+    margin: 0 30%;
+}
+
 
 /*END
 OF SIGN UP*/
