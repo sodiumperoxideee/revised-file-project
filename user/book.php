@@ -2,12 +2,13 @@
 <html lang="en">
 <?php
     $title = 'Book Now!';
-    require_once('./include/head.php');
+    $book_page = 'active';
+    require_once('../include/head.php');
 ?>
 
 <body>
     <?php
-        require_once('./include/header-user.php')
+        require_once('../include/header-user.php')
     ?>
   
   <main>
@@ -190,6 +191,6 @@
 </body>
 
     <?php
-        require_once('./include/user-footer.php')
+        require_once('../include/user-footer.php')
     ?>
 </html>

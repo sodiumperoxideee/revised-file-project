@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <?php
-    $title = 'Home - Welcome to Purrpaws Veterinary Clinic';
-    require_once('./include/head.php');
+    $title = 'Services: Pet Care for Dogs';
+    $aboutus_page = 'active';
+    require_once '../include/head.php';
 ?>
 
 <body>
   <?php
-    require_once('./include/header-user.php')
+    require_once '../include/header-user.php';
   ?>
   
 
@@ -20,12 +21,12 @@
     
     <section class="services-container mx-5">
       <div class="services-nav py-1">
-        <a class="nav-link active my-1" aria-current="page" href="services dog pet care.html">Pet Care</a>
-        <a class="nav-link my-1" aria-current="page" href="services dog emergency care.html">Emergency Care</a>
+        <a class="nav-link active my-1" aria-current="page" href="services dog pet care.php">Pet Care</a>
+        <a class="nav-link my-1" aria-current="page" href="services dog emergency care.php">Emergency Care</a>
       </div>
       <div class="services-nav mt-2 py-1">
-        <a class="nav-link active my-1" aria-current="page" href="services dog pet care.html">For Dogs</a>
-        <a class="nav-link my-1" aria-current="page" href="services cat pet care.html">For Cats</a>
+        <a class="nav-link active my-1" aria-current="page" href="services dog pet care.php">For Dogs</a>
+        <a class="nav-link my-1" aria-current="page" href="services cat pet care.php">For Cats</a>
       </div>
     </section>
 
@@ -204,6 +205,6 @@
   </section>
 </body>
 <?php
-    require_once('./include/user-footer.php')
+    require_once '../include/user-footer.php';
   ?>
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'Home - Welcome to Purrpaws Veterinary Clinic';
-    require_once('./include/head.php');
+    $title = 'Our Clinic Facilities';
+    require_once '../include/head.php';
 ?>
 
 <body>
     <?php
-        require_once('./include/header-user.php')
+        require_once '../include/header-user.php';
     ?>
 
     <div class="container-fluid">
@@ -263,6 +263,6 @@
 </body>
 
 <?php
-    require_once('./include/user-footer.php')
+    require_once '../include/user-footer.php';
 ?>
 </html>

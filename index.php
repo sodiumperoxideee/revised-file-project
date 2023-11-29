@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
     $title = 'Home - Welcome to Purrpaws Veterinary Clinic';
+    $homepage = 'active';
     require_once 'include/head.php';
 ?>
 <body>                                                     
@@ -20,7 +21,7 @@
                 <a class="btn mx-2 px-3 py-2" href="book.php" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an Appointment</a>
             </div>
             <div class="homeBtn">
-                <a class="emergencyBtn btn mx-2 px-3 py-2" href="emergency-care.php" role="button">Emergency Care</a>
+                <a class="emergencyBtn btn mx-2 px-3 py-2" href="/user/emergency-care.php" role="button">Emergency Care</a>
             </div>
         </div>
     </div>
