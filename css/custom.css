@@ -559,7 +559,6 @@ OF SIGN UP*/
 /*LOG IN */
 
 .login-left{
-    height: calc(100vh - 84px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -589,10 +588,6 @@ OF SIGN UP*/
     align-items: center;
 }
 
-.login-right form{
-    width: 100%;
-}
-
 .forgotpass{
     color: var(--clr-2);
     text-decoration: none;
@@ -601,10 +596,11 @@ OF SIGN UP*/
 
 .login-user, .signup-user{
     display: flex;
+    max-width: 100%;
     flex-direction: column;
     justify-content: center;
 }
-
+    
 /*END 
 OF LOG IN*/
 

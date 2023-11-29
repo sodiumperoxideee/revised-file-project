@@ -1,3 +1,25 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['user']) && $_SESSION['user'] == 'user'){
+        header('location: index.php');
+    }
+
+    require_once '../classes/account.class.php';
+    if(isset($_POST['login'])){
+        $user = new Account();
+        //sanitize
+        $user->email = htmlentities($_POST['email']);
+        $user->password = htmlentities($_POST['password']);
+        if($user->sign_in_user()){
+            $_SESSION['user'] = 'user';
+            header('location: index.php');
+        }else{
+            $error = 'Invalid email/password';
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,28 +47,16 @@
         <div class="col-5 login-right my-2 py-5">
             <h1 class="mb-5">Login to your account</h1>
             <div class="login-container">
-              <form action="home.html" method="get" class="login-user">
+              <form action="" method="get" class="login-user">
                 <div class="my-2">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="<?php if(isset($_POST['email'])){ echo $_POST['email']; } ?>">
                 </div>
                 <div class="my-2">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){ echo $_POST['password']; } ?>">
                 </div>
-                <div class="form-check my-2 mr-sm-2">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="inlineFormCheck"
-                  />
-                  <label class="form-check-label" for="inlineFormCheck">
-                    Remember me? 
-                    <a href="forgot password.html" class="forgotpass ms-5">Forgot password?</a>
-                  </label>
-                </div>
-                
-                <input class="btn px-3 py-2 mt-4" type="submit" value="Login">
+                <button type="submit" name="login" class="btn btn-primary px-3 py-2 mt-4 brand-bg-color btn-create-account">Login</button>
               </form>
             </div>
         </div>
