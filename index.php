@@ -79,14 +79,14 @@
       <h1>Cat and dog parents can visit Purrpaws</h1>
       <p>You can locate us at Cabato Building, San Jose Road, Corner Alejo Alvarez St, Zamboanga 7000, Zamboanga del Sur.</p>
         <div class="homeBtn">
-          <a class="btn mt-3 mx-2 px-3 py-2" href="contact.php" role="button">Learn More</a>
+          <a class="btn mt-3 mx-2 px-3 py-2" href="../user/contact.php" role="button">Learn More</a>
         </div>
     </div>
     
     <div class="home-third mx-5">
       <div class="row my-5">
         <div class="col px-3 d-flex justify-content-center">
-          <a href="services dog emergency care.php" class="home-services-link">
+          <a href="../user/services dog emergency care.php" class="home-services-link">
             <div class="home-col-container py-5">
               <i class="home-col-icon fa-solid fa-truck-medical px-3 py-3 mb-4"></i>
               <h4>Emergency Care Services</h4>
@@ -95,7 +95,7 @@
           </a>
         </div>
         <div class="col px-3 d-flex justify-content-center">
-          <a href="services dog pet care.php" class="home-services-link">
+          <a href="../user/services dog pet care.php" class="home-services-link">
             <div class="home-col-container py-5">
               <i class="home-col-icon fa-solid fa-handshake-angle px-3 py-3 mb-4"></i>
               <h4>Comprehensive Services</h4>
@@ -104,7 +104,7 @@
           </a>
         </div>
         <div class="col px-3 d-flex justify-content-center">
-          <a href="services cat pet care.php" class="home-services-link">
+          <a href="../user/services cat pet care.php" class="home-services-link">
             <div class="home-col-container py-5">
               <i class="home-col-icon fa-solid fa-shield-cat px-3 py-3 mb-4"></i>
               <h4>Pet Care Services</h4>
@@ -130,7 +130,7 @@
         <p class="section-2-p px-4 my-2 mt-3 text-center">Purrpaws Vet Clinic is a dedicated sanctuary for your furry friends. We understand that pets are cherished family members, and their well-being is our top priority. We pride ourselves on providing a holistic approach to pet healthcare, offering a wide range of services designed to ensure your pets' health, happiness, and longevity.
         </p>
         <div class="homeBtn mt-4">
-          <a class="btn mx-2 px-5 py-2" href="clinic-facilities.php" role="button">View Facilities</a>
+          <a class="btn mx-2 px-5 py-2" href="../user/clinic-facilities.php" role="button">View Facilities</a>
         </div>
       </div>
     </div>
