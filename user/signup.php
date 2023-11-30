@@ -14,7 +14,11 @@
       //sanitize
       $client->firstname = htmlentities($_POST['firstname']);
       $client->lastname = htmlentities($_POST['lastname']);
-      $client->gender = isset($_POST['gender']) ? htmlentities($_POST['gender']) : '';
+      if(isset($_POST['signup'])){
+        $client->gender = htmlentities($_POST['gender']);
+      }else{
+          $client->gender = '';
+      }
       $client->email = htmlentities($_POST['email']);
       $client->password = htmlentities($_POST['password']);
       $client->phoneno = htmlentities($_POST['phoneno']);
@@ -28,7 +32,7 @@
       validate_field($client->phoneno)){
           //proceed with saving
           if($client->add()){ 
-              header('location: login.php');
+              header('location: pet-signup.php');
               $message = 'You successfully created an account!';
           }else{
             echo 'An error occured while adding in the database.';

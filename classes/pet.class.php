@@ -21,7 +21,7 @@ Class Pet{
 
     //Methods
 
-    function add(){
+    function add(){ 
         $sql = "INSERT INTO pet (petname, type, breed, age, gender) VALUES 
         (:petname, :type, :breed, :age, :gender);";
 
@@ -69,7 +69,7 @@ Class Pet{
     }
 
     function show(){
-        $sql = "SELECT * FROM pet ORDER BY firstname ASC, lastname ASC;";
+        $sql = "SELECT * FROM pet ORDER BY petname ASC;";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){
