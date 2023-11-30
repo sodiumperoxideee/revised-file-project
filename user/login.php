@@ -1,20 +1,20 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['user']) && $_SESSION['user'] == 'user'){
-        header('location: index.php');
+    if(isset($_SESSION['user']) && $_SESSION['user'] == 'client'){
+      header('location: home.php');
     }
 
     require_once '../classes/account.class.php';
     if(isset($_POST['login'])){
-        $user = new Account();
+        $client = new Account();
         //sanitize
-        $user->email = htmlentities($_POST['email']);
-        $user->password = htmlentities($_POST['password']);
-        if($user->sign_in_user()){
-            $_SESSION['user'] = 'user';
-            header('location: index.php');
-        }else{
+        $client->email = htmlentities($_POST['email']);
+        $client->password = htmlentities($_POST['password']);
+        if($client->sign_in_client()){
+            $_SESSION['user'] = 'client';
+            header('location: home.php');
+        }else{ 
             $error = 'Invalid email/password';
         }
     }
@@ -36,32 +36,44 @@
 
   <div class="login">
     <div class="row">
-        <div class="col-7 login-left text-center">
-          <div class="left-container py-5">
-            <h1>Welcome back!</h1>
-            <p class="mt-3 mx-5">Log back in to book appointments for us to check up on your fur friend's health.</p>
-            <p class="alr mt-5">Don't have an account yet?</p>
-            <a href="signup.html" class="btn px-5 py-1 align-self-center">Sign Up</a>
-          </div>
+      <div class="col-7 login-left text-center">
+        <div class="left-container py-5">
+          <h1>Welcome back!</h1>
+          <p class="mt-3 mx-5">Log back in to book appointments for us to check up on your fur friend's health.</p>
+          <p class="alr mt-5">Don't have an account yet?</p>
+          <a href="signup.html" class="btn px-5 py-1 align-self-center">Sign Up</a>
         </div>
-        <div class="col-5 login-right my-2 py-5">
-            <h1 class="mb-5">Login to your account</h1>
-            <div class="login-container">
-              <form action="" method="get" class="login-user">
-                <div class="my-2">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="<?php if(isset($_POST['email'])){ echo $_POST['email']; } ?>">
-                </div>
-                <div class="my-2">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){ echo $_POST['password']; } ?>">
-                </div>
-                <button type="submit" name="login" class="btn btn-primary px-3 py-2 mt-4 brand-bg-color btn-create-account">Login</button>
-              </form>
+      </div>
+      <div class="col-5 login-right">
+        <h1 class="mb-1">Login to your account</h1>
+        <div class="user-signup-container">
+          <form action="" method="get" class="login-user">
+            <div class="py-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="<?php if(isset($_POST['email'])){ echo $_POST['email']; } ?>">
             </div>
+            <div class="py-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){ echo $_POST['password']; } ?>">
+            </div>
+            <button type="submit" name="login" class="btn btn-primary px-3 py-2 mt-4 brand-bg-color btn-create-account">Login</button>
+            
+            <?php
+            if(isset($_POST['login']) && isset($error)){
+            ?>
+                <p class="text-danger text-center">
+                    <?= $error ?>
+                </p>
+            <?php
+            }
+            ?>
+          </form>
         </div>
+      </div>
+    </div>
   </div>
-
-    <script src="script.js"></script>
+  <?php
+    require_once('../include/js.php')
+  ?>
 </body>
 </html>
