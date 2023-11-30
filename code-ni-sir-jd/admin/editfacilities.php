@@ -86,7 +86,7 @@
                             </div>
                             <div class="mb-2">
                                 <label for="description" class="form-label">Description</label>
-                                <input type="text" class="form-control" id="description" name="description" required value="<?php if(isset($_POST['description'])) { echo $_POST['description']; } else if(isset($description->description)){ echo $description->description; } ?>">
+                                <input type="text" class="form-control" id="description" name="description" required maxlength="255" value="<?php if(isset($_POST['description'])) { echo $_POST['description']; } else if(isset($description->description)){ echo $description->description; } ?>">
                                 <?php
                                     if(isset($_POST['description']) && !validate_field($_POST['description'])){
                                 ?>
