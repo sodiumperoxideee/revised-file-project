@@ -39,9 +39,10 @@ Class Vets{
     }
 
     function edit(){
-        $sql = "UPDATE vets SET vetName=:vetName, email=:email, almaMater=:almaMater, degree=:degree WHERE vetID = :vetID;";
+        $sql = "UPDATE vets SET vetName=:vetName, email=:email, almaMater=:almaMater, degree=:degree WHERE vetID=:vetID;";
 
         $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':vetID', $this->vetID);
         $query->bindParam(':vetName', $this->vetName);
         $query->bindParam(':email', $this->email);
         $query->bindParam(':almaMater', $this->almaMater);
@@ -74,6 +75,7 @@ Class Vets{
         }
         return $data;
     }
+
 }
 
 ?>
