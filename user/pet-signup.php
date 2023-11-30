@@ -1,10 +1,49 @@
+<?php
+
+  session_start();
+
+  if(isset($_SESSION['user']) && $_SESSION['user'] == 'client'){
+      header('location: ./index.php');
+  }
+
+  require_once '../classes/pet.class.php';
+  require_once '../tools/functions.php';
+
+  if(isset($_POST['signup'])){
+      $pet = new Pet();
+      //sanitize
+      $pet->petname = htmlentities($_POST['petname']);
+      $pet->gender = isset($_POST['type']) ? htmlentities($_POST['type']) : '';
+      $pet->breed = htmlentities($_POST['breed']);
+      $pet->age = htmlentities($_POST['age']);
+      $pet->gender = isset($_POST['gender']) ? htmlentities($_POST['gender']) : '';
+
+      //validate inputs of the users
+      if (validate_field($pet->petname) && 
+      validate_field($pet->type) &&
+      validate_field($pet->breed) &&
+      validate_field($pet->age) &&
+      validate_field($pet->gender )){
+          //proceed with saving
+          if($pet->add()){ 
+              header('location: login.php');
+              $message = "Your pet's info has been successfully saved!";
+          }else{
+            echo 'An error occured while adding in the database.';
+          }
+      }
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
-    $title = 'Your Pet Info';
+    $title = 'Sign your pet up';
     $signup_page = 'active';
     require_once '../include/head.php';
+    require_once '../tools/functions.php';
 ?>
 
 <body>
@@ -12,164 +51,109 @@
     require_once '../include/header-user.php';
   ?>
 
-  <div class="signup mx-5 my-5">
-            <h1 class="d-flex justify-content-center">Your Pet's Details</h1>
-              <div class="pet-signup-container">
-                  <form action="" method="post" class="signup-user">
-                    <div class="form-group row">
-                        <div class="col-sm-12 align-self-center my-2 form-check-inline">
-                            <label for="petname">Pet Name</label>
-                            <input type="petname" class="form-control" id="petname" name="petname" placeholder="Enter your pet's name" value="<?php if(isset($_POST['petname'])){echo $_POST['petname'];} ?>">
-                            <?php
-                              if(isset($_POST['petname']) && !validate_field($_POST)){
-                            ?>
-                              <div class="invalid-feedback d-block">
-                              Please enter valid pet name.
-                              </div>
-                            <?php
-                                }
-                            ?>
-                        </div>
-                        <div class="col-sm-12 align-self-center my-2 form-check-inline">
-                            <label for="lastname">Last Name</label>
-                            <input type="lastname" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name" value="<?php if(isset($_POST['lastname'])){echo $_POST['lastname'];} ?>">
-                            <?php
-                              if(isset($_POST['signup']) && !validate_ln($_POST)){
-                            ?>
-                              <div class="invalid-feedback d-block">
-                              Please enter valid last name.
-                              </div>
-                            <?php
-                              }
-                            ?>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-12 align-self-center mt-2">
-                      <p class="my-0">Gender:</p>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male" <?php if(isset($_POST['gender']) && $_POST['gender'] === 'male') echo 'checked'; ?>>
-                          <label class="form-check-label" for="gender_male">Male</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female" <?php if(isset($_POST['gender']) && $_POST['gender'] === 'female') echo 'checked'; ?>>
-                          <label class="form-check-label" for="gender_female">Female</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="gender" id="gender_others" value="others" <?php if(isset($_POST['gender']) && $_POST['gender'] === 'others') echo 'checked'; ?>>
-                          <label class="form-check-label" for="gender_others">Others</label>
-                      </div>
-                      <?php
-                        if(isset($_POST['signup']) && !validate_gender($_POST)){
-                      ?>
-                        <div class="invalid-feedback d-block">
-                        Please select valid gender.
-                        </div>
-                      <?php
-                        }
-                      ?>
-                    </div>
+  <div class="signup my-5 mx-5">
+      <div class="pet-signup-container">
+          <h1 class="mb-4">Pet's Information</h1>
+              <form action="" method="post" class="signup-user">
+                <div class="form-group row">
 
-                    <div class="form-group row">
-                        <div class="col-sm-12 align-self-center my-2">
-                            <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>">
+                    <div class="form-group mb-2">
+                      <div class="col-sm-12 align-self-center my-2 form-check-inline">
+                        <label for="petname">Pet Name</label>
+                        <input type="text" class="form-control" id="petname" name="petname" placeholder="Enter your pet's name" value="<?php if(isset($_POST['petname'])){echo $_POST['petname'];} ?>">
                         <?php
-                        if(isset($_POST['signup']) && !validate_email($_POST)){
+                          if(isset($_POST['petname']) && !validate_field($_POST['petname'])){
                         ?>
                           <div class="invalid-feedback d-block">
-                          Please enter valid email.
+                          Please enter valid pet name.
                           </div>
+                        <?php
+                            }
+                        ?>
+                      </div>
+                    </div>
+
+                    <div class="form-group mb-2">
+                      <label class="form-label">Pet Type</label>
+                      <div class="d-flex">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="dog" name="type" value="Dog" <?php if(isset($_POST['type']) && $_POST['type'] == 'Dog') { echo 'checked'; } ?>>
+                            <label class="form-check-label" for="dog">Dog</label>
+                        </div>
+                        <div class="form-check ms-3">
+                            <input type="radio" class="form-check-input" id="cat" name="type" value="Cat" <?php if(isset($_POST['type']) && $_POST['type'] == 'Cat') { echo 'checked'; } ?>>
+                            <label class="form-check-label" for="type">Cat</label>
+                        </div>
+                        <?php
+                          if((!isset($_POST['type']) && isset($_POST['signup'])) || (isset($_POST['type']) && !validate_field($_POST['type']))){
+                        ?>
+                          <p class="text-danger my-1">Select your pet's type</p>
                         <?php
                         }
                         ?>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <div class="col-sm-12 align-self-center my-2">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){echo $_POST['password'];} ?>">
-                      </div>
-
-                      <?php
-                      if(isset($_POST['signup']) && !validate_pw($_POST)){
-                      ?>
-                        <div class="invalid-feedback d-block">
-                          Please enter valid password.
-                        </div>
-                      <?php
-                      }
-                      ?>
-                    </div>
-
-
-                    <div class="form-group row">
-                      <div class="col-sm-12 align-self-center my-2">
-                        <label for="confirmpassword">Confirm password</label>
-                        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Enter your password again" value="<?php if(isset($_POST['confirmpassword'])){echo $_POST['confirmpassword'];} ?>">
-                      </div>
-
-                      <?php
-                      if(isset($_POST['signup']) && !validate_cpw($_POST)){
-                      ?>
-                        <div class="invalid-feedback d-block">
-                          Please re-enter valid password.
-                        </div>
-                      <?php
-                      }
-                      ?>
-                    </div>
-
-
-                    <div class="form-group row">
-                      <div class="col-sm-12 align-self-center my-2">
-                        <label for="phoneno">Phone Number</label>
-                        <input type="tel" class="form-control" name="phoneno" id="phoneno" placeholder="Enter your phone number" value="<?php if(isset($_POST['phoneno'])){echo $_POST['phoneno'];} ?>">
-                      </div>
-
-                      <?php
-                      if(isset($_POST['signup']) && !validate_phoneno($_POST)){
-                      ?>
-                        <div class="invalid-feedback d-block">
-                          Please enter valid phone number.
-                        </div>
-                      <?php
-                      }
-                      ?>
-                    </div>
-
-                    <button type="submit" class="btn px-5 py-2 my-3" name="signup" value="signup" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign Up</button>
-                    <!-- Button trigger modal -->
                     
+                <div class="form-group mb-2">
+                  <div class="col-sm-12 align-self-center my-2 form-check-inline">
+                      <label for="breed">Breed</label>
+                      <input type="text" class="form-control" id="breed" name="breed" placeholder="Enter your pet's breed" value="<?php if(isset($_POST['breed'])){echo $_POST['breed'];} ?>">
+                      <?php
+                        if(isset($_POST['breed']) && !validate_field($_POST['breed'])){
+                      ?>
+                        <div class="invalid-feedback d-block">
+                        Please enter valid pet breed.
+                        </div>
+                      <?php
+                          }
+                      ?>
+                  </div>
+                </div>
+
+                <div class="form-group mb-2">
+                  <div class="col-sm-12 align-self-center my-2 form-check-inline">
+                    <label for="age">Age</label>
+                    <input type="number" min="0" class="form-control" name="age" id="age" placeholder="How many months old is your pet?" value="<?php if(isset($_POST['phoneno'])){echo $_POST['phoneno'];} ?>">
+                  
                     <?php
-                    if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && validate_fn($_POST) && validate_ln($_POST) && validate_email($_POST) && validate_pw($_POST) && validate_cpw($_POST) && validate_phoneno($_POST)){
+                    if(isset($_POST['age']) && !validate_field($_POST['age'])){
                     ?>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Request for appointment has been successful</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            Thank you for choosing Purrpaws. Your confirmation details will be sent via email.
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <?php 
+                      <div class="invalid-feedback d-block">
+                        Please enter valid pet's age.
+                      </div>
+                    <?php
                     }
                     ?>
-                  </form>
-              </div>
+                  </div>
+                </div>
+
+                
+                <div class="form-group mb-2">
+                  <label class="form-label">Gender</label>
+                  <div class="d-flex">
+                      <div class="form-check">
+                          <input type="radio" class="form-check-input" id="male" name="gender" value="Male" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Male') { echo 'checked'; } ?>>
+                          <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="form-check ms-3">
+                          <input type="radio" class="form-check-input" id="female" name="gender" value="Female" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Female') { echo 'checked'; } ?>>
+                          <label class="form-check-label" for="female">Female</label>
+                      </div>
+                  </div>
+                  <?php
+                    if((!isset($_POST['gender']) && isset($_POST['signup'])) || (isset($_POST['gender']) && !validate_field($_POST['gender']))){
+                  ?>
+                    <p class="text-danger my-1">Select your pet's gender</p>
+                  <?php
+                  }
+                  ?>
+                </div>
+
+                <button type="submit" class="btn py-2 my-3" name="signup" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Submit</button>
+                
+              </form>
           </div>
+      </div>
       </div>
   </div>
 </body>

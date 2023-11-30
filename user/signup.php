@@ -70,7 +70,7 @@
                     <div class="form-group row">
                         <div class="col-sm-12 align-self-center my-2 form-check-inline">
                             <label for="firstname">First Name</label>
-                            <input type="firstname" class="form-control" id="firstname" name="firstname" placeholder="Enter your first name" value="<?php if(isset($_POST['firstname'])){echo $_POST['firstname'];} ?>">
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your first name" value="<?php if(isset($_POST['firstname'])){echo $_POST['firstname'];} ?>">
                             <?php
                               if(isset($_POST['firstname']) && !validate_field($_POST['firstname'])){
                             ?>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-sm-12 align-self-center my-2 form-check-inline">
                             <label for="lastname">Last Name</label>
-                            <input type="lastname" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name" value="<?php if(isset($_POST['lastname'])){echo $_POST['lastname'];} ?>">
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name" value="<?php if(isset($_POST['lastname'])){echo $_POST['lastname'];} ?>">
                             <?php
                               if(isset($_POST['lastname']) && !validate_field($_POST['lastname'])){
                             ?>

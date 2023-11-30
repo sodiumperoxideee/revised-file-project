@@ -87,17 +87,17 @@ Class Client{
     }
 
     
-    function is_email_exist(){
-        $sql = "SELECT * FROM user WHERE email = :email;";
-        $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':email', $this->email);
-        if($query->execute()){
-            if($query->rowCount()>0){
-                return true;
-            }
-        }
-        return false;
-    }
+    // function is_email_exist(){
+    //     $sql = "SELECT * FROM user WHERE email = :email;";
+    //     $query=$this->db->connect()->prepare($sql);
+    //     $query->bindParam(':email', $this->email);
+    //     if($query->execute()){
+    //         if($query->rowCount()>0){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 }
 
 ?>
