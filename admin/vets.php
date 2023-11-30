@@ -1,11 +1,11 @@
 <?php
     //resume session here to fetch session values
     session_start();
-    /*
-        if user is not login then redirect to login page,
-        this is to prevent users from accessing pages that requires
-        authentication such as the dashboard
-    */
+    // /*
+    //     if user is not login then redirect to login page,
+    //     this is to prevent users from accessing pages that requires
+    //     authentication such as the dashboard
+    // */
     if (!isset($_SESSION['user']) || $_SESSION['user'] != 'employee'){
         header('location: ./index.php');
     }
@@ -20,7 +20,7 @@
 ?>
 <body>
     <?php
-        require_once('../include/header.admin.php')
+        require_once('../include/header-admin.php')
     ?>
     <main>
         <div class="container-fluid">
