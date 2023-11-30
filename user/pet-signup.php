@@ -23,7 +23,7 @@
       validate_field($pet->type) &&
       validate_field($pet->breed) &&
       validate_field($pet->age) &&
-      validate_field($pet->gender )){
+      validate_field($pet->gender)){
           //proceed with saving
           if($pet->add()){ 
               header('location: login.php');
@@ -113,7 +113,7 @@
                 <div class="form-group mb-2">
                   <div class="col-sm-12 align-self-center my-2 form-check-inline">
                     <label for="age">Age</label>
-                    <input type="number" min="0" class="form-control" name="age" id="age" placeholder="How many months old is your pet?" value="<?php if(isset($_POST['phoneno'])){echo $_POST['phoneno'];} ?>">
+                    <input type="number" min="0" class="form-control" name="age" id="age" placeholder="How many months old is your pet?" value="<?php if(isset($_POST['age'])){echo $_POST['age'];} ?>">
                   
                     <?php
                     if(isset($_POST['age']) && !validate_field($_POST['age'])){
@@ -127,7 +127,7 @@
                   </div>
                 </div>
 
-                
+
                 <div class="form-group mb-2">
                   <label class="form-label">Gender</label>
                   <div class="d-flex">
