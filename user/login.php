@@ -47,14 +47,14 @@
       <div class="col-5 login-right">
         <h1 class="mb-1">Login to your account</h1>
         <div class="user-signup-container">
-          <form action="" method="get" class="login-user">
+          <form action="" method="POST" class="login-user">
             <div class="py-3">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="<?php if(isset($_POST['email'])){ echo $_POST['email']; } ?>">
             </div>
             <div class="py-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){ echo $_POST['password']; } ?>">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){ echo $_POST['password']; } ?>">
             </div>
             <button type="submit" name="login" class="btn btn-primary px-3 py-2 mt-4 brand-bg-color btn-create-account">Login</button>
             

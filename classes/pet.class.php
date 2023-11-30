@@ -4,7 +4,7 @@ require_once 'database.php';
 
 Class Pet{
     //attributes
-
+    
     public $pet_id;
     public $petname;
     public $type;
