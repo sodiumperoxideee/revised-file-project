@@ -23,8 +23,8 @@
       if (validate_field($client->firstname) && 
       validate_field($client->lastname) &&
       validate_field($client->gender) &&
+      validate_field($client->email) &&
       validate_cpw($client->password, $_POST['confirmpassword']) &&
-      validate_email($client->email) && !$user->is_email_exist() &&
       validate_field($client->phoneno)){
           //proceed with saving
           if($client->add()){ 
@@ -127,23 +127,12 @@
                             <label for="email">Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>">
                         <?php
-                          $new_user = new Client();
-                          if(isset($_POST['email'])){
-                              $new_user->email = htmlentities($_POST['email']);
-                          }else{
-                              $new_user->email = '';
-                          }
-
-                          if(isset($_POST['email']) && strcmp(validate_field($_POST['email']), 'success') != 0){
-                        ?>
-                          <p class="text-danger my-1"><?php echo validate_field($_POST['email']) ?></p>
-                        <?php
-                          }else if ($new_user->is_email_exist() && $_POST['email']){
+                          if(isset($_POST['email']) && !validate_field($_POST['email'])){
                         ?>
                           <div class="invalid-feedback d-block">
-                          Email already exists
+                          Please enter valid last name.
                           </div>
-                        <?php      
+                        <?php
                           }
                         ?>
                     </div>
