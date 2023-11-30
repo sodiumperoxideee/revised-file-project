@@ -6,7 +6,7 @@
     session_start();
 
     if (!isset($_SESSION['user']) || $_SESSION['user'] != 'employee'){
-    header('location: ./index.php');
+    header('location: index.php');
     }
     
     if(isset($_POST['save'])){

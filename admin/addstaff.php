@@ -3,10 +3,10 @@
     require_once '../classes/staff.class.php';
     require_once  '../tools/functions.php';
 
-    // session_start();
-    // if (!isset($_SESSION['user']) || $_SESSION['user'] != 'employee'){
-    //     header('location: ./index.php');
-    // }
+    session_start();
+    if (!isset($_SESSION['user']) || $_SESSION['user'] != 'employee'){
+        header('location: index.php');
+    }
     
     if(isset($_POST['save'])){
 
