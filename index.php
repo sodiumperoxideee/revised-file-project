@@ -2,11 +2,18 @@
 <html lang="en">
 <?php
     $title = 'Home - Welcome to Purrpaws Veterinary Clinic';
-    require_once('./include/head.php');
+    $homepage = 'active';
+    require_once 'include/head.php';
 ?>
 <body>                                                     
   <?php
-    require_once('./include/header-user.php')
+  
+  session_start();
+  if(!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] != 'client')){  
+    include 'include/header-user.php'; // Display different navigation for non-logged-in users
+  } else{
+    include 'include/header-logged-in-user.php'; // Display navigation based on login status
+  }
   ?>
 
   <main>
@@ -20,7 +27,7 @@
                 <a class="btn mx-2 px-3 py-2" href="book.php" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an Appointment</a>
             </div>
             <div class="homeBtn">
-                <a class="emergencyBtn btn mx-2 px-3 py-2" href="emergency-care.php" role="button">Emergency Care</a>
+                <a class="emergencyBtn btn mx-2 px-3 py-2" href="/user/emergency-care.php" role="button">Emergency Care</a>
             </div>
         </div>
     </div>
@@ -129,7 +136,7 @@
     </div>
   </main>
   <?php
-    require_once('./include/user-footer.php')
+    require_once('include/user-footer.php')
   ?>
 </body>
 <script src="script.js"></script>
