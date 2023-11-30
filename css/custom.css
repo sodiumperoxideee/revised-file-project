@@ -498,10 +498,6 @@ footer i{
 
 /*SIGN UP*/
 
-.signup, .login{
-    height: calc(100vh - 84px);
-    justify-content: center;
-}
 
 .admin-login, .admin-login .login-left, .login-right{
     height: 100vh !important;
@@ -519,6 +515,7 @@ footer i{
 }
 
 .signup-right h1, .login-right h1{
+    align-items: center;
     font-size: 2rem;
     text-align: center;
 }
@@ -532,7 +529,6 @@ footer i{
 }
 
 .signup-left{
-    height: calc(100vh - 84px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -542,9 +538,15 @@ footer i{
     background-position: left;
 }
 
-.signup-container{
-    margin: 0 20%;
+.user-signup-container{
+    margin: 0 10%;
 }
+
+
+.pet-signup-container{
+    margin: 0 30%;
+}
+
 
 /*END
 OF SIGN UP*/
@@ -554,7 +556,6 @@ OF SIGN UP*/
 /*LOG IN */
 
 .login-left{
-    height: calc(100vh - 84px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -577,17 +578,6 @@ OF SIGN UP*/
     padding-top: 10%;
 }
 
-
-.login-right{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-right form{
-    width: 100%;
-}
-
 .forgotpass{
     color: var(--clr-2);
     text-decoration: none;
@@ -596,10 +586,16 @@ OF SIGN UP*/
 
 .login-user, .signup-user{
     display: flex;
+    max-width: 100%;
     flex-direction: column;
     justify-content: center;
 }
 
+.login-right{
+    display: flex;
+    flex-direction: column  ;
+}
+    
 /*END 
 OF LOG IN*/
 
