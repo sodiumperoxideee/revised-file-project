@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['user']) && $_SESSION['user'] == 'client'){
-      header('location: home.php');
+      header('location: ../index.php');
     }
 
     require_once '../classes/account.class.php';
@@ -13,7 +13,7 @@
         $client->password = htmlentities($_POST['password']);
         if($client->sign_in_client()){
             $_SESSION['user'] = 'client';
-            header('location: home.php');
+            header('location: ../index.php');
         }else{
             $error = 'Invalid email/password';
         }

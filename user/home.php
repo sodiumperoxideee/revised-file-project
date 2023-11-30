@@ -8,22 +8,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <script src="./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./css/custom.css">
-    <link href="./vendor/fontawesome-free-6.4.2-web/css/fontawesome.css" rel="stylesheet">
-    <link href="./vendor/fontawesome-free-6.4.2-web/css/brands.css" rel="stylesheet">
-    <link href="./vendor/fontawesome-free-6.4.2-web/css/solid.css" rel="stylesheet">
-    <title>Home - Welcome to Purrpaws Veterinary Clinic</title>
-</head>
+
+<?php
+  require_once '../include/head.php';
+?>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div class="container-fluid">
-          <a href='/'><img src="./img/logo.png" class="logo mx-3 me-1" href="index.html"></a>
+          <a href='/'><img src="../img/logo.png" class="logo mx-3 me-1" href="index.html"></a>
         <button class="navbar-toggler  ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

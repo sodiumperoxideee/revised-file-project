@@ -7,7 +7,13 @@
 ?>
 <body>                                                     
   <?php
-    require_once 'include/header-user.php';
+  
+  session_start();
+  if(!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] != 'client')){  
+    include 'include/header-user.php'; // Display different navigation for non-logged-in users
+  } else{
+    include 'include/header-logged-in-user.php'; // Display navigation based on login status
+  }
   ?>
 
   <main>
