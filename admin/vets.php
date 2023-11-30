@@ -1,11 +1,3 @@
-<?php
-    session_start();
-
-    if(!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] != 'staff')){
-        header('location: index.php');
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -15,7 +7,7 @@
 ?>
 <body>
     <?php
-        require_once('../include/header.admin.php')
+        require_once('../include/header-admin.php')
     ?>
     <main>
         <div class="container-fluid">
