@@ -4,7 +4,7 @@ require_once 'database.php';
 
 class Account{
 
-    public $id;
+    public $user_id;
     public $email;
     public $password;
 
@@ -15,7 +15,7 @@ class Account{
         $this->db = new Database();
     }
 
-    function sign_in_user(){
+    function sign_in_client(){
         $sql = "SELECT * FROM user WHERE email = :email LIMIT 1;";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':email', $this->email);
@@ -24,7 +24,7 @@ class Account{
             $accountData = $query->fetch(PDO::FETCH_ASSOC);
     
             if ($accountData && password_verify($this->password, $accountData['password'])) {
-                $this->id = $accountData['user_id'];
+                $this->user_id = $accountData['user_id'];
                 return true;
             }
         }

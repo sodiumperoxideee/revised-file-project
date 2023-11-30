@@ -14,7 +14,11 @@
         if($client->sign_in_client()){
             $_SESSION['user'] = 'client';
             header('location: home.php');
+<<<<<<< Updated upstream
         }else{ 
+=======
+        }else{
+>>>>>>> Stashed changes
             $error = 'Invalid email/password';
         }
     }

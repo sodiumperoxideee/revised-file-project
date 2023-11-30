@@ -1,40 +1,40 @@
 <?php
 
-    session_start();
+  session_start();
 
-    if(isset($_SESSION['user']) && $_SESSION['user'] == 'user'){
-        header('location: ./index.php');
-    }
+  if(isset($_SESSION['user']) && $_SESSION['user'] == 'client'){
+      header('location: ./index.php');
+  }
 
-    require_once '../classes/user.class.php';
-    require_once '../tools/functions.php';
+  require_once '../classes/client.class.php';
+  require_once '../tools/functions.php';
 
-    if(isset($_POST['save'])){
-        $user = new User();
-        //sanitize
-        $user->firstname = htmlentities($_POST['firstname']);
-        $user->lastname = htmlentities($_POST['lastname']);
-        $user->gender = htmlentities($_POST['gender']);
-        $user->email = htmlentities($_POST['email']);
-        $user->password = htmlentities($_POST['password']);
-        $user->phoneno = htmlentities($_POST['phoneno']);
+  if(isset($_POST['signup'])){
+      $client = new Client();
+      //sanitize
+      $client->firstname = htmlentities($_POST['firstname']);
+      $client->lastname = htmlentities($_POST['lastname']);
+      $client->gender = isset($_POST['gender']) ? htmlentities($_POST['gender']) : '';
+      $client->email = htmlentities($_POST['email']);
+      $client->password = htmlentities($_POST['password']);
+      $client->phoneno = htmlentities($_POST['phoneno']);
 
-        //validate inputs of the users
-        if (validate_field($user->firstname) && 
-        validate_field($user->lastname) &&
-        validate_field($user->gender) &&
-        validate_field($user->email) &&
-        validate_field($user->password) && validate_password($user->password) &&
-        validate_field($user->phoneno)){
-            //proceed with saving
-            if($user->add()){
-                header('location: login.php');
-                $message = 'You successfully created an account!';
-            }else{
-                echo 'Something went wrong in creating your account.';
-            }
-        }
-    }
+      //validate inputs of the users
+      if (validate_field($client->firstname) && 
+      validate_field($client->lastname) &&
+      validate_field($client->gender) &&
+      validate_cpw($client->password, $_POST['confirmpassword']) &&
+      validate_email($client->email) && !$user->is_email_exist() &&
+      validate_field($client->phoneno)){
+          //proceed with saving
+          if($client->add()){ 
+              header('location: login.php');
+              $message = 'You successfully created an account!';
+          }else{
+            echo 'An error occured while adding in the database.';
+          }
+      }
+  }
 
 ?>
 
@@ -60,7 +60,7 @@
               <h1>Hello, welcome!</h1>
               <p class="mt-3 mx-5">Please enter your details to sign up to book appointments for your fur friends with ease.</p>
               <p class="alr mt-5">Already have an account?</p>
-              <a href="login.html" class="btn px-5 py-1 align-self-center">Login</a>
+              <a href="login.php" class="btn px-5 py-1 align-self-center">Login</a>
             </div>
           </div>
           <div class="col-5 signup-right my-5">
@@ -96,61 +96,70 @@
                         </div>
                     </div>
                     
-                    <div class="col-sm-12 align-self-center mt-2">
-                      <p class="my-0">Gender:</p>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male" <?php if(isset($_POST['gender']) && $_POST['gender'] === 'male') echo 'checked'; ?>>
-                          <label class="form-check-label" for="gender_male">Male</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female" <?php if(isset($_POST['gender']) && $_POST['gender'] === 'female') echo 'checked'; ?>>
-                          <label class="form-check-label" for="gender_female">Female</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="gender" id="gender_others" value="others" <?php if(isset($_POST['gender']) && $_POST['gender'] === 'others') echo 'checked'; ?>>
-                          <label class="form-check-label" for="gender_others">Others</label>
+                    <div class="form-group mb-2">
+                      <label class="form-label">Gender</label>
+                      <div class="d-flex">
+                          <div class="form-check">
+                              <input type="radio" class="form-check-input" id="male" name="gender" value="Male" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Male') { echo 'checked'; } ?>>
+                              <label class="form-check-label" for="male">Male</label>
+                          </div>
+                          <div class="form-check ms-3">
+                              <input type="radio" class="form-check-input" id="female" name="gender" value="Female" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Female') { echo 'checked'; } ?>>
+                              <label class="form-check-label" for="female">Female</label>
+                          </div>
+                          <div class="form-check ms-3">
+                              <input type="radio" class="form-check-input" id="non-binary" name="gender" value="Non-binary" <?php if(isset($_POST['gender']) && $_POST['gender'] == 'Non-binary') { echo 'checked'; } ?>>
+                              <label class="form-check-label" for="non-binary">Non-binary</label>
+                          </div>
                       </div>
                       <?php
-                        if(isset($_POST['gender']) && !validate_field($_POST['gender'])){
+                        if((!isset($_POST['gender']) && isset($_POST['signup'])) || (isset($_POST['gender']) && !validate_field($_POST['gender']))){
                       ?>
-                        <div class="invalid-feedback d-block">
-                        Please select valid gender.
-                        </div>
+                        <p class="text-danger my-1">Select your gender</p>
                       <?php
-                        }
+                      }
                       ?>
                     </div>
+                    
 
                     <div class="form-group row">
                         <div class="col-sm-12 align-self-center my-2">
                             <label for="email">Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];}?>">
                         <?php
-                        if(isset($_POST['email']) && !validate_field($_POST['email'])){
+                          $new_user = new Client();
+                          if(isset($_POST['email'])){
+                              $new_user->email = htmlentities($_POST['email']);
+                          }else{
+                              $new_user->email = '';
+                          }
+
+                          if(isset($_POST['email']) && strcmp(validate_field($_POST['email']), 'success') != 0){
+                        ?>
+                          <p class="text-danger my-1"><?php echo validate_field($_POST['email']) ?></p>
+                        <?php
+                          }else if ($new_user->is_email_exist() && $_POST['email']){
                         ?>
                           <div class="invalid-feedback d-block">
-                          Please enter valid email.
+                          Email already exists
                           </div>
-                        <?php
-                        }
+                        <?php      
+                          }
                         ?>
-                      </div>
+                    </div>
                     </div>
                     <div class="form-group row">
                       <div class="col-sm-12 align-self-center my-2">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" value="<?php if(isset($_POST['password'])){echo $_POST['password'];} ?>">
-                      </div>
-
                       <?php
-                      if(isset($_POST['password']) && !validate_password  ($_POST['password']) !== "success"){
+                        if(isset($_POST['password']) && validate_password($_POST['password']) !== "success"){
                       ?>
-                        <div class="invalid-feedback d-block">
-                          Please enter valid password.
-                        </div>
+                        <p class="text-danger my-1"><?= validate_password($_POST['password']) ?></p>
                       <?php
                       }
                       ?>
+                      </div>       
                     </div>
 
 
@@ -158,20 +167,19 @@
                       <div class="col-sm-12 align-self-center my-2">
                         <label for="confirmpassword">Confirm password</label>
                         <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Enter your password again" value="<?php if(isset($_POST['confirmpassword'])){echo $_POST['confirmpassword'];} ?>">
+                        <?php
+                        if(isset($_POST['password']) && isset($_POST['confirmpassword']) && !validate_cpw($_POST['password'], $_POST['confirmpassword'])){
+                        ?>
+                          <div class="invalid-feedback d-block">
+                          Your confirm password didn't match
+                          </div>
+                        <?php
+                        }
+                        ?>
                       </div>
-
-                      <?php
-                      if(isset($_POST['password']) && isset($_POST['confirmpassword']) && !validate_password($_POST['password'], $_POST['confirmpassword'])){
-                      ?>
-                        <div class="invalid-feedback d-block">
-                        Your confirm password didn't match
-                        </div>
-                      <?php
-                      }
-                      ?>
                     </div>
-
-
+                    
+                        
                     <div class="form-group row">
                       <div class="col-sm-12 align-self-center my-2">
                         <label for="phoneno">Phone Number</label>
@@ -189,36 +197,8 @@
                       ?>
                     </div>
 
-                    <button type="submit" class="btn px-5 py-2 my-3" name="save" value="save" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign Up</button>
-                    <!-- Button trigger modal -->
+                    <button type="submit" class="btn px-5 py-2 my-3" name="signup" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign Up</button>
                     
-                    <?php
-                    if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['gender']) && isset($_POST['email']) && validate_field($_POST['firstname']) &&
-                     validate_field($_POST['lastname']) && validate_field($_POST['gender']) && validate_field($_POST)['email'] && validate_field($_POST['password']) && validate_password($_POST['password']) && validate_phoneno($_POST['phoneno'])){
-                    ?>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Request for appointment has been successful</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            Thank you for choosing Purrpaws. Your confirmation details will be sent via email.
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <?php 
-                    }
-                    ?>
                   </form>
               </div>
           </div>
