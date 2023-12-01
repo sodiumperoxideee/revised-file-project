@@ -23,10 +23,13 @@
                 ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <h2 class="h3 brand-color pt-3 pb-2">Clinic Services</h2>
-                    <a href="addservices.php" class="btn btn-primary brand-bg-color mb-3">Add Service</a>
-                    <div class="search-keyword col-12 flex-lg-grow-0 d-flex">
-                        <div class="input-group">
-                            <input type="text" name="keyword" id="keyword" placeholder="Search Service" class="form-control">
+                    <div class="row g-2 mb-2 m-0">
+                        <div id="MyButtons" class="d-flex mb-md-2 mb-lg-0 col-12 col-md-auto"></div>
+                            <div class="input-group">
+                                <input type="text" name="keyword" id="keyword" placeholder="Search Facility" class="form-control">
+                                <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
+                                <a href="addservices.php" class="btn btn-primary brand-bg-color ms-2">Add Service</a>
+                            </div>
                         </div>
                     </div>
                     <div id="table-container">
@@ -36,7 +39,6 @@
 
                         $services = new Services();
 
-                        // Fetch staff data (you should modify this to retrieve data from your database)
                         $servicesArray = $services->show();
                         $counter = 1;
                             
@@ -47,7 +49,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Service ID</th>
                                     <th scope="col">Service Name</th>
-                                    <th scope="col" width="40%">Description</th>
+                                    <th scope="col" width="30%">Description</th>
                                     <th scope="col">Price</th>
                                     <th scope="col" width="5%">Action</th>
                                 </tr>
@@ -63,7 +65,9 @@
                                         <td><?= $item['service_name'] ?></td>
                                         <td><?= $item['description'] ?></td>
                                         <td><?= $item['price'] ?></td>
-                                        <td class="text-center"><a href="editservices.php?service_id=<?= $item['service_id'] ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                        <td class="text-center"><a href="editservices.php?service_id=<?= $item['service_id'] ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        <a href="deleteservices.php?service_id=<?= $item['service_id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                        
                                     </tr>
                         <?php
                                     $counter++;
