@@ -29,7 +29,7 @@
     </div>
 
     <?php
-    require_once('include/user-footer.php')
+    require_once('../include/user-footer.php')
     ?>
 </body>
 </html>
