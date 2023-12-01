@@ -1108,3 +1108,41 @@ tr:hover {
     text-decoration: underline;
 }
 
+/* Contact Us */
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.contact-form label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #168d7c;
+}
+
+/* End of
+Contact Us */

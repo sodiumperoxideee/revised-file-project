@@ -27,6 +27,7 @@
                 <li><a class="dropdown-item" href="../user/services dog pet care.php">Services</a></li>
                 <li><a class="dropdown-item" href="../user/veterinarians.php">Veterinarians</a></li>
                 <li><a class="dropdown-item" href="../user/clinic-facilities.php">Clinic Facilities</a></li>
+              <li><a class="nav-link mx-2 <?= $signup_page ?>" href="../user/contact.php">Contact Us</a></li>
               </ul>
             </li>
           </ul>
