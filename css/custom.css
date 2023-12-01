@@ -34,6 +34,16 @@ footer i{
     z-index: 999999;
 }
 
+#sidebarMenu{
+    background-color: var(--clr-4);
+    box-shadow: 0 1px 4px rgb(0,0,0,0.5) !important;
+
+}
+
+#sidebarMenu.nav-link{
+    color: white !important;
+}
+
 .navbar ul{
     margin: 0px;
 }
