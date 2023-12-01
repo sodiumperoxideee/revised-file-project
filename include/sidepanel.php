@@ -8,47 +8,41 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $order_page ?>" href="#">
+                <a class="nav-link <?= $appointment_page ?>" href="#">
                     <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
                     Appointments
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $product_page ?>" href="products.php">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <a class="nav-link <?= $users_page ?>" href="products.php">
+                <i class="fa-solid fa-user-doctor"></i>
                     Users
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $customer_page ?>" href="#">
-                    <i class="fa fa-users" aria-hidden="true"></i>
+                <a class="nav-link <?= $vets_page ?>" href="#">
+                <i class="fa-solid fa-stethoscope"></i>
                     Vets
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $reports_page ?>" href="#">
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                    Reports
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link <?= $staff_page ?>" href="staff.php">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                <a class="nav-link <?= $services_page ?>" href="staff.php">
+                <i class="fa-solid fa-suitcase-medical"></i>
                     Services
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $staff_page ?>" href="staff2.php">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                <a class="nav-link <?= $facilities_page ?>" href="staff2.php">
+                <i class="fa-solid fa-house-medical"></i>
                     Clinic Facilities
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link <?= $settings_page ?>" href="#">
                     <i class="fa fa-cog" aria-hidden="true"></i>
                     Settings
                 </a>
-            </li>
+            </li> -->
             <hr class="d-lg-none">
             <li class="nav-item d-lg-none">
                 <a class="nav-link" href="#">
