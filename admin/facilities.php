@@ -38,7 +38,7 @@
                             <div class="input-group">
                                 <input type="text" name="keyword" id="keyword" placeholder="Search Facility" class="form-control">
                                 <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
-                                <a href="addservices.php" class="btn brand-bg-color ms-2">Add Facility</a>
+                                <a href="addfacilities.php" class="btn brand-bg-color ms-2">Add Facility</a>
                             </div>
                         </div>
                     </div>

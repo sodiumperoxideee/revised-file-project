@@ -56,7 +56,7 @@
 ?>
 <body>
     <?php
-        require_once('../include/header.admin.php')
+        require_once('../include/header-admin.php')
     ?>
     <main>
         <div class="container-fluid">
@@ -73,53 +73,27 @@
                         <form method="post" action="">
                             <div class="mb-2">
                                 <label for="facilitiesName" class="form-label">Facility Name</label>
-                                <input type="text" class="form-control" id="facilitiesName" name="facilitiesName" required value="<?php if(isset($_POST['facilitiesName'])) { echo $_POST['facilitiesName']; } else if(isset($facilities->facilitiesName)){ echo $facilities->facilitiesName; } ?>">
+                                <input type="text" class="form-control" id="facilitiesName" name="facilitiesName" value="<?php if(isset($_POST['facilitiesName'])) { echo $_POST['facilitiesName']; } else if(isset($facilities->facilitiesName)){ echo $facilities->facilitiesName; } ?>">
                                 <?php
                                     if(isset($_POST['facilitiesName']) && !validate_field($_POST['facilitiesName'])){
                                 ?>
-                                        <p class="text-danger my-1">Facility name is required</p>
+                                        <p class="text-danger my-1">Please enter a valid facility name</p>
                                 <?php
                                     }
                                 ?>
                             </div>
                             <div class="mb-2">
                                 <label for="description" class="form-label">Description</label>
-                                <input type="text" class="form-control" id="description" name="description" required value="<?php if(isset($_POST['description'])) { echo $_POST['description']; } else if(isset($description->description)){ echo $description->description; } ?>">
+                                <input type="text" maxlength = "255" class="form-control" id="description" name="description" value="<?php if(isset($_POST['description'])) { echo $_POST['description']; } else if(isset($description->description)){ echo $description->description; } ?>">
                                 <?php
                                     if(isset($_POST['description']) && !validate_field($_POST['description'])){
                                 ?>
-                                        <p class="text-danger my-1">Description is required</p>
+                                        <p class="text-danger my-1">Please enter a valid description</p>
                                 <?php
                                     }
                                 ?>
                             </div>
-                            <!-- <div class="form-group mb-2">
-                                <label for="category" class="form-label">Category</label>
-                                <select name="category" id="category" class="form-select">
-                                    <option value="">Select Category</option>
-                                    <option value="Pizza" <?php if(isset($_POST['category']) && $_POST['category'] == 'Pizza') { echo 'selected'; } else if(isset($product->category) && $product->category == 'Pizza'){ echo 'selected'; } ?>>Pizza</option>
-                                    <option value="Drinks" <?php if(isset($_POST['category']) && $_POST['category'] == 'Drinks') { echo 'selected'; } else if(isset($product->category) && $product->category == 'Drinks'){ echo 'selected'; } ?>>Drinks</option>
-                                    <option value="Hamburger" <?php if(isset($_POST['category']) && $_POST['category'] == 'Hamburger') { echo 'selected'; } else if(isset($product->category) && $product->category == 'Hamburger'){ echo 'selected'; } ?>>Hamburger</option>
-                                </select>
-                                <?php
-                                    if(isset($_POST['category']) && !validate_field($_POST['category'])){
-                                ?>
-                                        <p class="text-danger my-1">Select product category</p>
-                                <?php
-                                    }
-                                ?>
-                            </div>
-                            <div class="mb-2">
-                                <label for="price" class="form-label">Price</label>
-                                <input type="number" step="any" class="form-control" id="price" name="price" required value="<?php if(isset($_POST['price'])) { echo $_POST['price']; } else if(isset($product->price)){ echo $product->price; } ?>">
-                                <?php
-                                    if(isset($_POST['price']) && !validate_field($_POST['price'])){
-                                ?>
-                                        <p class="text-danger my-1">Price is required</p>
-                                <?php
-                                    }
-                                ?>
-                            </div> -->
+                            
                             <div class="form-group mb-2">
                                 <label class="form-label">Availability</label>
                                 <div class="d-flex">
@@ -136,16 +110,7 @@
                                         <label class="form-check-label" for="underCons">Under Construction</label>
                                     </div>
                                 </div>
-                                <!-- <div class="d-flex">
-                                    <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="inStock" name="availability" value="In Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } else if(isset($product->availability) && $product->availability == 'In Stock'){ echo 'checked'; } ?>>
-                                        <label class="form-check-label" for="inStock">In Stock</label>
-                                    </div>
-                                    <div class="form-check ms-3">
-                                        <input type="radio" class="form-check-input" id="outStock" name="availability" value="Out of Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Out of Stock') { echo 'checked'; } else if(isset($product->availability) && $product->availability == 'Out of Stock'){ echo 'checked'; } ?>>
-                                        <label class="form-check-label" for="outStock">Out of Stock</label>
-                                    </div>
-                                </div> -->
+                                
                                 <?php
                                     if((!isset($_POST['availability']) && isset($_POST['save'])) || (isset($_POST['availability']) && !validate_field($_POST['availability']))){
                                 ?>

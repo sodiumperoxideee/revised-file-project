@@ -55,7 +55,7 @@
 ?>
 <body>
     <?php
-        require_once('../include/header.admin.php')
+        require_once('../include/header-admin.php')
     ?>
     <main>
         <div class="container-fluid">
@@ -114,39 +114,7 @@
                                     }
                                 ?>
                             </div>
-                            <!-- <div class="mb-2">
-                                <label for="discounted_price" class="form-label">Discounted Price</label>
-                                <input type="number" min="0" step="any" class="form-control" id="discounted_price" name="discounted_price" required value="<?php if(isset($_POST['discounted_price'])) { echo $_POST['discounted_price']; } else if(isset($voucher->discounted_price)){ echo $voucher->discounted_price; } ?>">
-                                <?php
-                                    if(isset($_POST['discounted_price']) && !validate_field($_POST['discounted_price'])){
-                                ?>
-                                        <p class="text-danger my-1">Discounted price is required</p>
-                                <?php
-                                    }
-                                ?>
-                            </div> -->
-                            <!-- <div class="form-group mb-2">
-                                <label for="minimum_purchase" class="form-label">Minimum Purchase</label>
-                                <input type="number" min="0" step="any" class="form-control" id="minimum_purchase" name="minimum_purchase" required value="<?php if(isset($_POST['minimum_purchase'])) { echo $_POST['minimum_purchase']; } else if(isset($voucher->minimum_purchase)){ echo $voucher->minimum_purchase; } ?>">
-                                <?php
-                                    if(isset($_POST['minimum_purchase']) && !validate_field($_POST['minimum_purchase'])){
-                                ?>
-                                        <p class="text-danger my-1">Minimum purchase is required</p>
-                                <?php
-                                    }
-                                ?>
-                            </div> -->
-                            <!-- <div class="mb-2">
-                                <label for="expiration_datetime" class="form-label">Expiration Date and Time</label>
-                                <input type="datetime-local" class="form-control" id="expiration_datetime" name="expiration_datetime" required value="<?php if(isset($_POST['expiration_datetime'])) { echo $_POST['expiration_datetime']; } else if(isset($voucher->expiration_datetime)){ echo $voucher->expiration_datetime; } ?>">
-                                <?php
-                                    if(isset($_POST['expiration_datetime']) && !validate_field($_POST['expiration_datetime'])){
-                                ?>
-                                        <p class="text-danger my-1">Expiration date and time is required</p>
-                                <?php
-                                    }
-                                ?>
-                            </div> -->
+                            
                             <button type="submit" name="save" class="btn btn-primary mt-2 mb-3 brand-bg-color">Save Veterinarian</button>
                         </form>
                     </div>
