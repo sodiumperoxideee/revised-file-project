@@ -79,7 +79,7 @@
       <h1>Cat and dog parents can visit Purrpaws</h1>
       <p>You can locate us at Cabato Building, San Jose Road, Corner Alejo Alvarez St, Zamboanga 7000, Zamboanga del Sur.</p>
         <div class="homeBtn">
-          <a class="btn mt-3 mx-2 px-3 py-2" href="../user/contact.php" role="button">Learn More</a>
+          <a class="btn mt-3 mx-2 px-3 py-2" href="../user/clinic-facilities.php" role="button">Learn More</a>
         </div>
     </div>
     
