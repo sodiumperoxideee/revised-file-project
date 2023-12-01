@@ -45,7 +45,7 @@ Class Staff{
     }
 
     function edit(){
-        $sql = "UPDATE staff SET firstname=:firstname, lastname=:lastname, role=:role, email=:email, status=:status WHERE id = :id;";
+        $sql = "UPDATE staff SET firstname=:firstname, lastname=:lastname, role=:role, email=:email, status=:status WHERE user_id = :user_id;";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
@@ -53,7 +53,7 @@ Class Staff{
         $query->bindParam(':role', $this->role);
         $query->bindParam(':email', $this->email);
         $query->bindParam(':status', $this->status);
-        $query->bindParam(':id', $this->id);
+        $query->bindParam(':user_id', $this->user_id);
         
         if($query->execute()){
             return true;
@@ -64,9 +64,9 @@ Class Staff{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM staff WHERE id = :id;";
+        $sql = "SELECT * FROM staff WHERE user_id = :user_id;";
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':id', $record_id);
+        $query->bindParam(':user_id', $record_id);
         if($query->execute()){
             $data = $query->fetch();
         }

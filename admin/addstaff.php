@@ -3,10 +3,10 @@
     require_once '../classes/staff.class.php';
     require_once  '../tools/functions.php';
 
-    session_start();
-    if (!isset($_SESSION['user']) || $_SESSION['user'] != 'staff'){
-        header('location: ./index.php');
-    }
+    // session_start();
+    // if (!isset($_SESSION['user']) || $_SESSION['user'] != 'staff'){
+    //     header('location: ./index.php');
+    // }
     
     if(isset($_POST['save'])){
         $staff = new Staff();
@@ -115,11 +115,11 @@
 
                                     if(isset($_POST['email']) && strcmp(validate_email($_POST['email']), 'success') != 0){
                                 ?>
-                                        <p class="text-danger my-1"><?php echo validate_email($_POST['email']) ?></p>
+                                    <p class="text-danger my-1">Email already exist</p>
                                 <?php
                                     }else if ($new_staff->is_email_exist() && $_POST['email']){
                                 ?>
-                                        <p class="text-danger my-1">Email already exist</p>
+                                    <p class="text-danger my-1"><?php echo validate_email($_POST['email']) ?></p>
                                 <?php      
                                     }
                                 ?>
