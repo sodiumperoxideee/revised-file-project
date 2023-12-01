@@ -8,19 +8,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $order_page ?>" href="../admin/appointments.php">
+                <a class="nav-link <?= $appointment_page ?>" href="../admin/appointments.php">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     Appointments
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $product_page ?>" href="../admin/users.php">
+                <a class="nav-link <?= $users_page ?>" href="../admin/users.php">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     Users
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $vet_page ?>" href="../admin/vets.php">
+                <a class="nav-link <?= $vets_page ?>" href="../admin/vets.php">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     Vets
                 </a>
@@ -32,13 +32,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $staff_page ?>" href="../admin/services.php">
+                <a class="nav-link <?= $services_page ?>" href="../admin/services.php">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     Services
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $staff_page ?>" href="../admin/facilities.php">
+                <a class="nav-link <?= $facilities_page ?>" href="../admin/facilities.php">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     Clinic Facilities
                 </a>

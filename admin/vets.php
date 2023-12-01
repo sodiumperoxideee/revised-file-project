@@ -15,7 +15,7 @@
 <html lang="en">
 <?php
     $title = 'Vets';
-    $vet_page = 'active';
+    $vets_page = 'active';
     require_once('../include/head.php');
 ?>
 <body>
