@@ -3,6 +3,7 @@
     require_once '../classes/facilities.class.php';
     require_once  '../tools/functions.php';
 
+<<<<<<< HEAD
     //resume session here to fetch session values
     // session_start();
     // /*
@@ -13,6 +14,13 @@
     // if (!isset($_SESSION['user']) || $_SESSION['user'] != 'employee'){
     //     header('location: ./index.php');
     // }
+=======
+    session_start();
+
+    if (!isset($_SESSION['user']) || $_SESSION['user'] != 'staff'){
+        header('location: ./index.php');
+    }
+>>>>>>> 7aa4575a5175f6c710b14c7eca9d99c73486843e
 
     if(isset($_GET['facilitiesID'])){
         $facilities = new Facilities();
@@ -22,8 +30,6 @@
         $facilities->availability = $record['availability'];
     }
     
-    //if the above code is false then html below will be displayed
-
     if(isset($_POST['save'])){
 
         $facilities = new Facilities();
