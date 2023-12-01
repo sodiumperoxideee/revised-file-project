@@ -45,7 +45,7 @@
 ?>
 <body>
     <?php
-        require_once('../include/header.admin.php')
+        require_once('../include/header-admin.php')
     ?>
     <main>
         <div class="container-fluid">
@@ -62,7 +62,7 @@
                     <form method="post" action="">
                             <div class="mb-2">
                                 <label for="vetName" class="form-label">Veterinarian Name</label>
-                                <input type="text" class="form-control" id="vetName" name="vetName" required value="<?php if(isset($_POST['vetName'])) { echo $_POST['vetName']; } else if(isset($vets->vetName)){ echo $vets->vetName; } ?>">
+                                <input type="text" class="form-control" id="vetName" name="vetName" value="<?php if(isset($_POST['vetName'])) { echo $_POST['vetName']; } else if(isset($vets->vetName)){ echo $vets->vetName; } ?>">
                                 <?php
                                     if(isset($_POST['vetName']) && !validate_field($_POST['vetName'])){
                                 ?>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="mb-2">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" required value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } else if(isset($vets->email)){ echo $vets->email; } ?>">
+                                <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } else if(isset($vets->email)){ echo $vets->email; } ?>">
                                 <?php
                                     if(isset($_POST['email']) && !validate_field($_POST['email'])){
                                 ?>
@@ -84,7 +84,7 @@
                             </div>
                             <div class="mb-2">
                                 <label for="almaMater" class="form-label">Alma Mater</label>
-                                <input type="text" class="form-control" id="almaMater" name="almaMater" required value="<?php if(isset($_POST['almaMater'])) { echo $_POST['almaMater']; } else if(isset($vets->almaMater)){ echo $vets->almaMater; } ?>">
+                                <input type="text" class="form-control" id="almaMater" name="almaMater" value="<?php if(isset($_POST['almaMater'])) { echo $_POST['almaMater']; } else if(isset($vets->almaMater)){ echo $vets->almaMater; } ?>">
                                 <?php
                                     if(isset($_POST['almaMater']) && !validate_field($_POST['almaMater'])){
                                 ?>
@@ -95,7 +95,7 @@
                             </div>
                             <div class="mb-2">
                                 <label for="degree" class="form-label">Degree</label>
-                                <input type="text" class="form-control" id="degree" name="degree" required value="<?php if(isset($_POST['degree'])) { echo $_POST['degree']; } else if(isset($vets->degree)){ echo $vets->degree; } ?>">
+                                <input type="text" class="form-control" id="degree" name="degree" value="<?php if(isset($_POST['degree'])) { echo $_POST['degree']; } else if(isset($vets->degree)){ echo $vets->degree; } ?>">
                                 <?php
                                     if(isset($_POST['degree']) && !validate_field($_POST['degree'])){
                                 ?>
