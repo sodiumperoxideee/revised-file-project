@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link <?= $homepage ?>" aria-current="page" href="./index.php">Home</a>
+              <a class="nav-link <?= $homepage ?>" aria-current="page" href="../index.php">Home</a>
             </li>
             <li class="nav-item dropdown mx-3">
               <a class="nav-link dropdown-toggle <?= $book_page ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

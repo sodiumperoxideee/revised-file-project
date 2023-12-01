@@ -489,6 +489,7 @@ div.section-2{
         
     }
 
+
     .calendar-container{
         align-content: center;
         padding: 5% 10%!important;
@@ -749,7 +750,7 @@ OF SERVICES*/
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding: 0 10%;
+    padding: 0 20%;
 }
 
 
@@ -763,14 +764,19 @@ OF SERVICES*/
 }
 
 .booking-container{
-    box-shadow: 2px 2px 4px 4px rgb(0,0,0,0.1);
+    box-shadow: 2px 0px 4px 0px rgb(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #001C30;
+    background-color: #ADD8E6;
     max-width: 100%;
-    border-radius: 10px;
-    color: #fff;
+    border-radius: 1%;
+}
+
+.learn-more{
+    margin: 2% 0 2%;
+    text-decoration: none;
+    align-self: self-end;
 }
 
 .booking-container .submit{

@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $appointment_page ?>" href="../admin/appointments.php">
+                <a class="nav-link <?= $appointments_page ?>" href="../admin/appointments.php">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     Appointments
                 </a>

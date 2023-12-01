@@ -46,7 +46,6 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col"  width="10%">Service ID</th>
                                     <th scope="col">Service Name</th>
                                     <th scope="col" width="50%">Description</th>
                                     <th scope="col">Price</th>
@@ -60,10 +59,9 @@
                                 ?>
                                             <tr>
                                                 <td><?= $counter ?></td>
-                                                <td><?= $item['service_id'] ?></td>
                                                 <td><?= $item['service_name'] ?></td>
                                                 <td><?= $item['description'] ?></td>
-                                                <td><?= $item['price'] ?></td>
+                                                <td>₱<?= $item['price'] ?></td>
                                                 <td class="text-center"><a href="editservices.php?service_id=<?= $item['service_id'] ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                 <a href="deleteservices.php?service_id=<?= $item['service_id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                                 

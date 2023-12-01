@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+  
+    session_start();
+    if(!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] != 'client')){
+    session_destroy();
+    header('location: login.php');
+    } else{
+    include '../include/header-logged-in-user.php'; // Display navigation based on login status
+    }
+
     $title = 'Book Now!';
     $book_page = 'active';
     require_once('../include/head.php');
+    require_once '../classes/services.class.php';
+    require_once '../classes/vets.class.php';
+    require_once '../classes/appointments.class.php';
+    require_once '../tools/functions.php';
+
+    $services = new Services();
+    $servicesArray = $services->show();
+    
+    $vets = new Vets();
+    $vetsArray = $vets->show();
+
+    if(isset($_POST['submit'])){
+        $appt = new Appointment();
+        //sanitize
+        $services->service_id = htmlentities($_POST['service_id']);
+        $vets->vetID = htmlentities($_POST['vetID']);
+        $appt->time = htmlentities($_POST['time']);
+        $appt->date = htmlentities($_POST['date']);
+        
+        //validate inputs of the users
+        if (validate_field($services->service_id) && 
+        validate_field($vets->vetID) &&
+        validate_field($appt->time) &&
+        validate_field($appt->date)){
+            //proceed with saving
+            if($appt->add()){ 
+                header('location: book.php');
+                $message = 'You successfully booked an appointment!';
+            }else{
+              echo 'An error occured while trying to save your booking request';
+            }
+        }
+    }
+  
 ?>
 
 <body>
-    <?php
-        require_once('../include/header-user.php')
-    ?>
-    
     <main>
         <div class="booking-title">
             <div class="booking-title-text text-white">
@@ -19,156 +58,92 @@
             </div>        
         </div>
 
-        <div class="facilities d-flex justify-content-center text-center pb-3">
+        <!-- <div class="facilities d-flex justify-content-center text-center pb-3">
             <h1>Services</h1>
-            <P>Choose a service you want; you can optionally select options.</P>
-        </div>
+        </div> -->
 
-        <form class="booking-body">
+        <form class="booking-body my-5" method="post" action="">
                 <div class="booking-container mb-2 px-5 pb-5">
                     <div class="book-services-title my-5 mb-2">
                         <h4>Choose from any of our services</h4>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="Wellness Check-up" aria-label="...">
-                                    Wellness Check-up
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Vaccination
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Grooming
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dental Care
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Spaying
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Neutering
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Parasite Prevention
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Deworming
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Rehabilitation Services
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Puppy Care
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Senior Dog Care
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    X-rays and Imaging
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Laboratory Services
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Pain Management
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Allergy Testing and Treatment
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Hospice and End-of-Life Care
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="services dog pet care.php" class="mt-4" style="color: #6b9cac; text-decoration: none; text-align: end;">Learn More</a>
-                    </div>
-                </div>
+                    <select class="book-service py-2">
+                        <option  name="service_id" id="service_id" value="<?php if(isset($_POST['service_id'])){echo $_POST['service_id'];} ?>" disabled selected>Select a service</option>
+                        <?php
+                        if ($servicesArray) {
+                            foreach ($servicesArray as $service) {
+                                echo "<option value='{$service['service_id']}'>{$service['service_name']}</option>";
+                            }
+                        }
 
-                <div class="row mt-5">
-                    <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
-                        <div class="booking-container mb-2 px-5 py-5">
-                            <h4>Choose a schedule</h4>
-                            <div class="form-group mb-3 mt-1 col-lg-4 col-md-12 col-sm-12 mx-auto">
-                                <label for="appointmentDate">Appointment Date</label>
-                                <input type="date" class="form-control" id="appointmentDate" required>
+
+                        if(isset($_POST['firstname']) && !validate_field($_POST['firstname'])){
+                        ?>
+                            <div class="invalid-feedback d-block">
+                            Please choose a valid service.
                             </div>
-                            <div class="form-group mb-3 col-lg-4 col-md-12 col-sm-12 mx-auto">
-                                <label for="appointmentTime">Appointment Time</label>
-                                <input type="time" class="form-control" id="appointmentTime" required>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <a href="services dog pet care.php" class="learn-more">Learn More</a>
+                        
+                    
+                    <h4>Choose a Purrpaws Clinic Veterinarian</h4>
+                    <select class="book-service py-2">
+                        <option name="vetID" id="vetID" value="<?php if(isset($_POST['vetID'])){echo $_POST['vetID'];} ?>" disabled selected>Select a vet</option>
+                        <?php
+                        if ($vetsArray) {
+                            foreach ($vetsArray as $vets) {
+                                echo "<option value='{$vets['vetID']}'>{$vets['vetName']}</option>";
+                            }
+                        }
+
+                        if(isset($_POST['firstname']) && !validate_field($_POST['firstname'])){
+                        ?>
+                            <div class="invalid-feedback d-block">
+                            Please choose a valid service.
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <a href="veterinarians.php" class="learn-more">Learn More</a>
+                    
 
-                <div class="facilities d-flex justify-content-center text-center pb-3">
-                    <h1>Veterinarians</h1>
-                    <P>Choose what you want; you can optionally select options.</P>
-                </div>
+                    <h4>Choose a schedule</h4>
+                    <div class="form-group py-3 me-auto">
+                        <label for="date">Appointment Date</label>
+                        <input type="date" class="form-control" name="date" id="date" value="<?php if(isset($_POST['date'])){echo $_POST['date'];} ?>">
+                        <?php
+                              if(isset($_POST['date']) && !validate_field($_POST['date'])){
+                            ?>
+                              <div class="invalid-feedback d-block">
+                              Please enter valid date.
+                              </div>
+                            <?php
+                              }
+                            ?>
+                    </div>
+                    <div class="form-group py-3 me-auto">
+                        <label for="time">Appointment Time</label>
+                        <input type="time" class="form-control" name="time" id="time" value="<?php if(isset($_POST['time'])){echo $_POST['time'];} ?>" >
+                        <?php
+                              if(isset($_POST['time']) && !validate_field($_POST['time'])){
+                            ?>
+                              <div class="invalid-feedback d-block">
+                              Please enter valid time.
+                              </div>
+                            <?php
+                              }
+                            ?>
+                    </div>
 
-                <div class="booking-container mb-5 px-5 pb-5">            
-                    <div class="book-services-title my-5 mb-2">
-                        <h4>Choose a Vet</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dr. Emily Johnson
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dr. James Anderson
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dr. Olivia Davis
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dr. Sophia Patel
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dr. Samuel Roberts
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Dr. Isabella Lopez
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="vet.php" class="mt-4" style="color: #67b2c9; text-decoration: none; text-align: end;">Learn More</a>
-                    </div>
-                </div>
+
+                    <input name="submit" class="btn px-5 py-2 my-3" type="submit" value="Submit Appointment" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 
-                <input class="btn px-5 py-2 my-3" type="submit" value="Submit Appointment" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                </div>
+              
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
