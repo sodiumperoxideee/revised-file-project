@@ -9,7 +9,6 @@
     }
     
     if(isset($_POST['save'])){
-
         $staff = new Staff();
         //sanitize
         $staff->firstname = htmlentities($_POST['firstname']);
