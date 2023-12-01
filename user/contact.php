@@ -3,7 +3,7 @@
 <?php
     $title = 'Contact Us';
     $contact = 'active';
-    require_once 'include/head.php';
+    require_once '../include/head.php';
 ?>
 <body>
     <?php
