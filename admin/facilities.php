@@ -22,15 +22,26 @@
                     require_once('../include/sidepanel.php')
                 ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="title-addbtn d-flex "></div>
                     <h2 class="h3 brand-color pt-3 pb-2">Clinic Facilities</h2>
-                    <a href="addfacilities.php" class="btn btn-primary brand-bg-color mb-3">Add Clinic Facility</a>
-                    <!-- <div class="search-keyword col-12 flex-lg-grow-0 d-flex">
+                    <div class="table-responsive overflow-hidden">
+                    <div class="row g-2 mb-2 m-0">
+                        <div id="MyButtons" class="d-flex mb-md-2 mb-lg-0 col-12 col-md-auto"></div>
+                        <div class="search-keyword col-12 flex-lg-grow-0 d-flex"> 
+                        <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0">
+                            <select name="staff-status" id="staff-status" class="form-select me-md-5">
+                                <option value="">All Availability</option>
+                                <option value="Active">Available</option>
+                                <option value="Deactivated">Unavailable</option>
+                            </select>
+                        </div>
                             <div class="input-group">
-                                <input type="text" name="keyword" id="keyword" placeholder="Search Veterinarian" class="form-control">
+                                <input type="text" name="keyword" id="keyword" placeholder="Search Facility" class="form-control">
                                 <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
+                                <a href="addservices.php" class="btn brand-bg-color ms-2">Add Facility</a>
                             </div>
-                            <button class="btn btn-outline-secondary btn-add" type="button" data-bs-toggle="modal" data-bs-target="#addVetsModal"><i class="fa fa-plus brand-color" aria-hidden="true"></i></button>
-                    </div> -->
+                        </div>
+                    </div>
                     <div id="table-container">
                     <?php
                         require_once '../classes/facilities.class.php';
@@ -46,9 +57,9 @@
                         <table id="facilities" class="table table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">Facility ID</th>
+                                    <th scope="col">#</th>
                                     <th scope="col">Facility Name</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col" width="40%">Description</th>
                                     <th scope="col">Availability</th>
                                     <th scope="col" width="5%">Action</th>
                                 </tr>
@@ -60,7 +71,6 @@
                         ?>
                                     <tr>
                                         <td><?= $counter ?></td>
-                                        <td><?= $item['facilitiesID'] ?></td>
                                         <td><?= $item['facilitiesName'] ?></td>
                                         <td><?= $item['description'] ?></td>
                                         <td><?= $item['availability'] ?></td>

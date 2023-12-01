@@ -68,19 +68,18 @@
                                 <?php
                                     if(isset($_POST['facilitiesName']) && !validate_field($_POST['facilitiesName'])){
                                 ?>
-                                        <p class="text-danger my-1">Facility Name is required</p>
+                                        <p class="text-danger my-1">Please enter a valid facility name</p>
                                 <?php
                                     }
                                 ?>
                             </div>
                             <div class="mb-2">
-                                <input type="">
                                 <label for="description" class="form-label">Description</label>
                                 <input type="text" max-length="255" class="form-control" id="description" name="description" required value="<?php if(isset($_POST['description'])) { echo $_POST['description']; } ?>">
                                 <?php
-                                    if(isset($_POST['description']) && !validate_field($_POST['facilitiesName'])){
+                                    if(isset($_POST['description']) && !validate_field($_POST['description'])){
                                 ?>
-                                        <p class="text-danger my-1">Description is required</p>
+                                        <p class="text-danger my-1">Please enter a valid description</p>
                                 <?php
                                     }
                                 ?>
@@ -104,7 +103,7 @@
                                 <?php
                                     if((!isset($_POST['availability']) && isset($_POST['save'])) || (isset($_POST['availability']) && !validate_field($_POST['availability']))){
                                 ?>
-                                        <p class="text-danger my-1">Select availability of the facility</p>
+                                        <p class="text-danger my-1">Please select an availability</p>
                                 <?php
                                     }
                                 ?>

@@ -25,7 +25,31 @@
                 ?>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <h2 class="h3 brand-color pt-3 pb-2">Staff</h2>
-                    <a href="addstaff.php" class="btn btn-primary brand-bg-color mb-3">Add Staff</a>
+                    <div class="table-responsive overflow-hidden">
+                    <div class="row g-2 mb-2 m-0">
+                        <div id="MyButtons" class="d-flex mb-md-2 mb-lg-0 col-12 col-md-auto"></div>
+                        <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0 ms-lg-auto">
+                            <select name="staff-role" id="staff-role" class="form-select me-md-2">
+                                <option value="">All Roles</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Staff">Staff</option>
+                                <option value="Cashier">Cashier</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0">
+                            <select name="staff-status" id="staff-status" class="form-select me-md-2">
+                                <option value="">All Status</option>
+                                <option value="Active">Active</option>
+                                <option value="Deactivated">Deactivated</option>
+                            </select>
+                        </div>
+                            <div class="input-group">
+                                <input type="text" name="keyword" id="keyword" placeholder="Search Facility" class="form-control">
+                                <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
+                                <a href="addstaff.php" class="btn brand-bg-color ms-2">Add Staff</a>
+                            </div>
+                        </div>
+                    </div>
                     <div id="table-container">
                     <?php
                         require_once '../classes/staff.class.php';
@@ -77,4 +101,3 @@
         require_once('../include/js.php')
     ?>
 </body>
-</html>

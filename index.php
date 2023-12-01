@@ -139,5 +139,4 @@
     require_once('include/user-footer.php')
   ?>
 </body>
-<script src="script.js"></script>
 </html>

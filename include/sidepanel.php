@@ -20,6 +20,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link <?= $staff_page ?>" href="../admin/staff.php">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Staff
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link <?= $vets_page ?>" href="../admin/vets.php">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     Vets

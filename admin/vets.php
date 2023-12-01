@@ -32,12 +32,11 @@
                     <h2 class="h3 brand-color pt-3 pb-2">Veterinarians</h2>
                     <a href="addvets.php" class="btn btn-primary brand-bg-color mb-3">Add Veterinarians</a>
                     <div class="search-keyword col-12 flex-lg-grow-0 d-flex">
-                            <div class="input-group">
-                                <input type="text" name="keyword" id="keyword" placeholder="Search Veterinarian" class="form-control">
-                                <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
-                            </div>
-                            <button class="btn btn-outline-secondary btn-add" type="button" data-bs-toggle="modal" data-bs-target="#addVetsModal"><i class="fa fa-plus brand-color" aria-hidden="true"></i></button>
+                        <div class="input-group">
+                            <input type="text" name="keyword" id="keyword" placeholder="Search Veterinarian" class="form-control">
+                            <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
                         </div>
+                    </div>
                     <div id="table-container">
                     <?php
                         require_once '../classes/vets.class.php';
@@ -53,6 +52,7 @@
                         <table id="vets" class="table table-striped table-sm">
                             <thead>
                                 <tr>
+                                    <th scope="col">#</th>
                                     <th scope="col">Vet ID</th>
                                     <th scope="col">Veterinarian Name</th>
                                     <th scope="col">Email</th>
@@ -68,6 +68,7 @@
                         ?>
                                     <tr>
                                         <td><?= $counter ?></td>
+                                        <td><?= $item['vetID'] ?></td>
                                         <td><?= $item['vetName'] ?></td>
                                         <td><?= $item['email'] ?></td>
                                         <td><?= $item['almaMater'] ?></td>

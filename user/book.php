@@ -189,8 +189,8 @@
         </form>
     </main>
 </body>
-
     <?php
-        require_once('../include/user-footer.php')
+        require_once '../include/user-footer.php';
+        require_once '../include/js.php';
     ?>
 </html>
