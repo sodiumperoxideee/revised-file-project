@@ -57,6 +57,12 @@ footer i{
     color: var(--clr-2); 
 }
 
+.card.admin-rounded{
+    border-radius: 15px;
+    width: 95%;
+}
+
+
 .sidebar .nav-link {
     font-weight: 500;
     color: #333;

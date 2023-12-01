@@ -1,9 +1,9 @@
 <?php
-    // session_start();
+    session_start();
 
-    // if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-    //     header('location: vets.php');
-    // }
+    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
+        header('location: dashboard.php');
+    }
 
     require_once('../classes/account.class.php');
     
@@ -13,7 +13,7 @@
         $account->password = htmlentities($_POST['password']);
         if ($account->sign_in_staff()){
             $_SESSION['user'] = 'staff';
-            header('location: staff.php');
+            header('location: dashboard.php');
         }else{
             $error =  'Invalid email/password. Try again.';
         }

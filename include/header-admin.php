@@ -10,7 +10,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle color-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="../img/veti1.jpg" class="rounded-circle me-1" alt="User Image" width="30px" height="30px">
-                            User Name
+                            Sunshine
                         </a>
                         <ul class="dropdown-menu dropdown-profile" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>

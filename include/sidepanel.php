@@ -50,7 +50,7 @@
                 </a>
             </li>
             <hr class="d-lg-none">
-            <li class="nav-item d-lg-none">
+            <li class="nav-item d-lg">
                 <a class="nav-link" href="../admin/admin.logout.php">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                     Logout
