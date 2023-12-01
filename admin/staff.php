@@ -1,15 +1,9 @@
 <?php
     // session_start();
 
-<<<<<<< HEAD
     // if (!isset($_SESSION['user']) || $_SESSION['user'] != 'employee'){
     //     header('location: ./index.php');
     // }
-=======
-    if (!isset($_SESSION['user']) || $_SESSION['user'] != 'staff'){
-        header('location: index.php');
-    }
->>>>>>> 7aa4575a5175f6c710b14c7eca9d99c73486843e
 ?>
 
 <!DOCTYPE html>

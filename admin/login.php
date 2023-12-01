@@ -1,15 +1,9 @@
 <?php
     // session_start();
 
-<<<<<<< HEAD
     // if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
     //     header('location: vets.php');
     // }
-=======
-    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-        header('location: staff.php');
-    }
->>>>>>> 7aa4575a5175f6c710b14c7eca9d99c73486843e
 
     require_once('../classes/account.class.php');
     
