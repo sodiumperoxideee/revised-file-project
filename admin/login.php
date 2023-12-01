@@ -2,7 +2,7 @@
     session_start();
 
     if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-        header('location: vets.php');
+        header('location: staff.php');
     }
 
     require_once('../classes/account.class.php');
@@ -13,7 +13,7 @@
         $account->password = htmlentities($_POST['password']);
         if ($account->sign_in_staff()){
             $_SESSION['user'] = 'staff';
-            header('location: vets.php');
+            header('location: staff.php');
         }else{
             $error =  'Invalid email/password. Try again.';
         }
