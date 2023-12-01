@@ -179,6 +179,5 @@
     <?php
         require_once('../include/js.php')
     ?>
-    <script src="../js/dashboard.js"></script>
 </body>
 </html>

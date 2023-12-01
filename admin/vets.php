@@ -15,7 +15,7 @@
 <html lang="en">
 <?php
     $title = 'Vets';
-    $vets_page = 'active';
+    $vet_page = 'active';
     require_once('../include/head.php');
 ?>
 <body>
@@ -87,7 +87,7 @@
         </div>
     </main>
     <?php
-        require_once('../include/js.php')
+    require_once '../include/js.php';
     ?>
 </body>
 </html>

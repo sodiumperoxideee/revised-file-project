@@ -34,14 +34,57 @@ footer i{
     z-index: 999999;
 }
 
-#sidebarMenu{
-    background-color: var(--clr-4);
-    box-shadow: 0 1px 4px rgb(0,0,0,0.5) !important;
-
+.dropdown-profile.dropdown-menu[data-bs-popper]{
+    right: 0;
+    left: auto;
 }
 
-#sidebarMenu.nav-link{
+.color-white{
     color: white !important;
+}
+
+#sidebarMenu .fa{
+    width: 20px;
+}
+
+.sidebar .nav-link.active, .sidebar .nav-link:hover{
+    color: white !important;
+    background-color: var(--clr-1) !important;
+    font-weight: bold;
+}
+
+.card-body .fa{
+    color: var(--clr-2); 
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+  
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+}
+
+.sidebar {
+    background-color: #f2f2f2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 70px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+  
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .navbar ul{

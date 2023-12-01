@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $customer_page ?>" href="../admin/vets.php">
+                <a class="nav-link <?= $vet_page ?>" href="../admin/vets.php">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     Vets
                 </a>
