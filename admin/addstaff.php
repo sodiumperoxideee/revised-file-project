@@ -98,7 +98,7 @@
                                 <?php
                                     if(isset($_POST['role']) && !validate_field($_POST['role'])){
                                 ?>
-                                        <p class="text-danger my-1">Select a staff role</p>
+                                        <p class="text-danger my-1">Please select a staff role</p>
                                 <?php
                                     }
                                 ?>
@@ -109,7 +109,7 @@
                                 <?php
                                     if(isset($_POST['email']) && !validate_field($_POST['email'])){
                                 ?>
-                                    <p class="text-danger my-1">Email is required</p>
+                                    <p class="text-danger my-1">Please enter a valid email</p>
                                 <?php
                                     }
                                 ?>
