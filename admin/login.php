@@ -20,7 +20,7 @@
 <body>
     <main>
         <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-            <div class="admin-login-page p-5 mx-5 w-50">
+            <div class="admin-login-page p-5 mx-md-auto w-md-50">
                 <p class="text-center">
                     <img src="../img/logo.png" class="img-fluid" alt="">
                 </p>
