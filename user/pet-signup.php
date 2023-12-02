@@ -28,7 +28,7 @@
         //proceed with saving
         if($pet->add()){ 
             header('location: login.php');
-            $message = "Your pet's info has been successfully saved!";
+            echo "<script>alert('Your pet's info has been successfully saved!');window.location.href='index.php'</script>";
         }else{
           echo 'An error occured while adding in the database.';
         }
@@ -44,6 +44,7 @@
     $title = 'Sign your pet up';
     $signup_page = 'active';
     require_once '../include/head.php';
+    require_once '../include/js.php';
     require_once '../tools/functions.php';
 ?>
 

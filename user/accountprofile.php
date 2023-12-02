@@ -13,8 +13,12 @@
     include '../classes/pet.class.php';
   ?>
   
-  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <h2 class="h3 brand-color pt-3 pb-2">My Pet Information</h2>
+
+  <div class="acc-history-container my-5 mx-5 px-5 py-3">
+      
+      <div class="settings-title mx-5 px-3 my-4">
+      <h2>My Pet Information</h2>
+      
       <div class="table-responsive overflow-hidden">
       <div id="table-container">
       <?php
@@ -62,15 +66,14 @@
           ?>
               </tbody>
           </table>
-      </div>
-  </main>
-  
-  <div class="settings-title mx-5 px-3 my-4">
-    <h2>Account History</h2>
-    <p>View your past bookings if applicable.</p>
+        </div>
+     </div>
+    </div>
   </div>
 
   <div class="acc-history-container my-5 mx-5 px-5 py-3">
+    <h2>Account History</h2>
+    <p>View your past bookings if applicable.</p>
     <table class="table">
       <thead>
           <tr>
