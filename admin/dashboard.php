@@ -1,4 +1,10 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['user']) || $_SESSION['user'] != 'staff'){
+    header('location: index.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,113 +73,49 @@
                         </div> -->
                     </div>
                     <h2 class="h3 brand-color">New Appointments</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
+                    <div id="table-container">
+                    <?php
+                        require_once '../classes/appointments.class.php';
+                        require_once '../tools/functions.php';
+
+                        $appt = new Appointment();
+
+                        $apptArray = $appt->show();
+                        $counter = 1;
+                    ?>
+                        <table id="appt" class="table table-striped table-sm">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Customer Name</th>
-                                    <th scope="col">Order Summary</th>
-                                    <th scope="col">Total Items</th>
-                                    <th scope="col">Total (₱)</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Appointment ID</th>
+                                    <th scope="col">User ID</th>
+                                    <th scope="col">Service ID</th>
+                                    <th scope="col">Vet ID</th>
+                                    <th scope="col">Appt. Date</th>
+                                    <th scope="col">Appt. Time</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2023-10-15</td>
-                                    <td>John Doe</td>
-                                    <td>Spicy Pizza with Jalapenos</td>
-                                    <td>2</td>
-                                    <td>₱800.00</td>
-                                    <td>Delivered</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>2023-10-16</td>
-                                    <td>Jane Smith</td>
-                                    <td>Spicy Margherita Pizza</td>
-                                    <td>1</td>
-                                    <td>₱625.00</td>
-                                    <td>Processing</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>2023-10-17</td>
-                                    <td>Mike Johnson</td>
-                                    <td>Spicy Chicken Pizza</td>
-                                    <td>3</td>
-                                    <td>₱1,150.00</td>
-                                    <td>Pending</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>2023-10-18</td>
-                                    <td>Lisa Anderson</td>
-                                    <td>Spicy Veggie Pizza</td>
-                                    <td>2</td>
-                                    <td>₱950.00</td>
-                                    <td>Delivered</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>2023-10-19</td>
-                                    <td>Robert Green</td>
-                                    <td>Spicy Pepperoni Pizza</td>
-                                    <td>1</td>
-                                    <td>₱520.00</td>
-                                    <td>Processing</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>2023-10-20</td>
-                                    <td>Susan Taylor</td>
-                                    <td>Spicy BBQ Chicken Pizza</td>
-                                    <td>4</td>
-                                    <td>₱1,400.00</td>
-                                    <td>Pending</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>2023-10-21</td>
-                                    <td>William Brown</td>
-                                    <td>Spicy Hawaiian Pizza</td>
-                                    <td>2</td>
-                                    <td>₱900.00</td>
-                                    <td>Processing</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>2023-10-22</td>
-                                    <td>Mary Johnson</td>
-                                    <td>Spicy Supreme Pizza</td>
-                                    <td>3</td>
-                                    <td>₱1,250.00</td>
-                                    <td>Delivered</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>2023-10-23</td>
-                                    <td>James Wilson</td>
-                                    <td>Spicy Meat Lovers Pizza</td>
-                                    <td>2</td>
-                                    <td>₱1,100.00</td>
-                                    <td>Processing</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>2023-10-24</td>
-                                    <td>Emily Davis</td>
-                                    <td>Spicy Veggie Delight Pizza</td>
-                                    <td>1</td>
-                                    <td>₱600.00</td>
-                                    <td>Pending</td>
-                                </tr>
-                                <!-- You now have a total of 10 rows with spicy pizza orders -->
+                            <tbody id="apptTableBody">
+                        <?php
+                            if ($apptArray) {
+                                foreach ($apptArray as $item) {
+                        ?>
+                                    <tr>
+                                        <td><?= $counter ?></td>
+                                        <td><?= $item['appointment_id'] ?></td>
+                                        <td><?= $item['user_id'] ?></td>
+                                        <td><?= $item['service_id'] ?></td>
+                                        <td><?= $item['vetID'] ?></td>
+                                        <td><?= $item['date'] ?></td>
+                                        <td><?= $item['time'] ?></td>
+                                    </tr>
+                        <?php
+                                    $counter++;
+                                }
+                            }
+                        ?>
                             </tbody>
-                        </table>                                             
+                        </table>
                     </div>
                 </main>
             </div>
