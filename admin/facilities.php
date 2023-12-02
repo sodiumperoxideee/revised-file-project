@@ -1,34 +1,9 @@
-
-
 <?php
-<<<<<<< HEAD
-require_once '../classes/facilities.class.php';
-require_once '../tools/functions.php';
-
-$facilities = new Facilities();
-
-// Fetch staff data (you should modify this to retrieve data from your database)
-$facilitiesArray = $facilities->show();
-$counter = 1;
-
-// Handle search and filter
-$searchKeyword = isset($_GET['search']) ? $_GET['search'] : '';
-$availability = isset($_GET['staff-status']) ? $_GET['staff-status'] : '';
-
-// Construct the SQL query
-$sql = "SELECT * FROM facilities WHERE facilitiesID=$searchKeyword";
-
-if (!empty($searchKeyword)) {
-    $sql .= " AND (facilitiesName LIKE '%$searchKeyword%' OR description LIKE '%$searchKeyword%')";
-}
-
-=======
     session_start();
 
     if (!isset($_SESSION['user']) || $_SESSION['user'] != 'staff'){
         header('location: index.php');
     }
->>>>>>> 7b5f3cecb741bd6e2419b877b0fb96727c0f745e
 ?>
 
 <!DOCTYPE html>
