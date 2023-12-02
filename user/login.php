@@ -39,7 +39,7 @@
     <div class="row">
       <div class="col-lg-6 col-sm-6 col-md-6 login-left text-center">
         <div class="left-container py-5">
-          <h1>Hello, Hooman!</h1>
+          <h2>Hello, Hooman!</h2>
           <p class="mt-2">Log in to book appointments with us and for us to be able to check up on your fur friend's health.</p>
           <p class="alr">Don't have an account yet?</p>
           <a href="signup.php" class="btn px-5 py-1 align-self-center">Sign Up</a>
