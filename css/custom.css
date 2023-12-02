@@ -274,7 +274,7 @@ footer i{
 }
 
 div.section-2{
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.90)), url('../img/bldg.avif');
+    background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.90)), url('../img/bldg.avif');
     background-size: cover;
     background-position: center;
     align-items: center;
