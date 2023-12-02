@@ -35,8 +35,7 @@
                 Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../user/user settings.php">Settings</a></li>
-                <li><a class="dropdown-item" href="../user/account history.php">Account History</a></li>
+                <li><a class="dropdown-item" href="../user/accountprofile.php">Account Profile</a></li>
                 <li><a class="dropdown-item" href="../user/user.logout.php">Logout</a></li>
               </ul>
             </li>

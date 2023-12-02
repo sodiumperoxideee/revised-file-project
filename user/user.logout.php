@@ -2,4 +2,4 @@
 
 session_start();
 session_destroy();
-header('location: ../index.php');
+echo "<script>alert('Logging out');window.location.href='login.php'</script>";

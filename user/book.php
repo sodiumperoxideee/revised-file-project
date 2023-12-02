@@ -4,7 +4,7 @@
     session_start();
     if(!isset($_SESSION['user']) || (isset($_SESSION['user']) && $_SESSION['user'] != 'client')){
     session_destroy();
-    header('location: login.php');
+    echo "<script>alert('You are required to log in to book an appointment');window.location.href='login.php'</script>";
     } else{
     include '../include/header-logged-in-user.php';
     
