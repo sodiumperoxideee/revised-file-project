@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'Staff Login';
+    $title = 'Admin Login';
     require_once('../include/head.php');
 ?>
 <body>
