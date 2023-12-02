@@ -69,6 +69,7 @@
                         <h2 class="h3 brand-color pt-3 pb-2">Edit Clinic Facility</h2>
                         <a href="facilities.php" class="text-primary text-decoration-none"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
                     </div>
+                    
                     <div class="col-12 col-lg-6">
                         <form method="post" action="">
                             <div class="mb-2">
@@ -98,27 +99,27 @@
                                 <label class="form-label">Availability</label>
                                 <div class="d-flex">
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="available" name="availability" value="In Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } ?>>
+                                        <input type="radio" class="form-check-input" id="available" name="availability" value="Available" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Available') { echo 'checked'; } else if(isset($facilities->availability) && $facilities->availability == 'Available'){ echo 'checked'; } ?>>
                                         <label class="form-check-label" for="available">Available</label>
                                     </div>
                                     <div class="form-check ms-3">
-                                        <input type="radio" class="form-check-input" id="outOrder" name="availability" value="In Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } ?>>
+                                        <input type="radio" class="form-check-input" id="outOrder" name="availability" value="Out of Order" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Out of Order') { echo 'checked'; } else if(isset($facilities->availability) && $facilities->availability == 'Out of Order'){ echo 'checked'; } ?>>
                                         <label class="form-check-label" for="outOrder">Out of Order</label>
                                     </div>
                                     <div class="form-check ms-3">
-                                        <input type="radio" class="form-check-input" id="underCons" name="availability" value="Out of Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Out of Stock') { echo 'checked'; } ?>>
+                                        <input type="radio" class="form-check-input" id="underCons" name="availability" value="Under Construction" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Under Construction') { echo 'checked'; } else if(isset($facilities->availability) && $facilities->availability == 'Under Construction'){ echo 'checked'; } ?>>
                                         <label class="form-check-label" for="underCons">Under Construction</label>
                                     </div>
                                 </div>
-                                
                                 <?php
                                     if((!isset($_POST['availability']) && isset($_POST['save'])) || (isset($_POST['availability']) && !validate_field($_POST['availability']))){
                                 ?>
-                                        <p class="text-danger my-1">Select availability of the facility</p>
+                                        <p class="text-danger my-1">Select availability status</p>
                                 <?php
                                     }
                                 ?>
                             </div>
+                            
                             <button type="submit" name="save" class="btn btn-primary mt-2 mb-3 brand-bg-color">Save Facility</button>
                         </form>
                     </div>
