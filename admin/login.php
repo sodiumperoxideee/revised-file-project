@@ -1,24 +1,15 @@
-<?php
-    session_start();
 
-    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-        header('location: dashboard.php');
-    }
 
-    require_once('../classes/account.class.php');
-    
-    if (isset($_POST['login'])) {
-        $account = new Account();
-        $account->email = htmlentities($_POST['email']);
-        $account->password = htmlentities($_POST['password']);
-        if ($account->sign_in_staff()){
-            $_SESSION['user'] = 'staff';
-            header('location: dashboard.php');
-        }else{
-            $error =  'Invalid email/password. Try again.';
-        }
+<style>
+    .container-fluid {
+        background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgba(8, 45, 56, 0.9)), url('../img/loginadm.jpg');
+        background-size: cover;
     }
-?>
+    .admin-login-page {
+        background-color: white;
+        border-radius: 20px;
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +20,11 @@
 <body>
     <main>
         <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-            <div class="admin-login-page p-4">
+            <div class="admin-login-page p-5 mx-5 w-50">
                 <p class="text-center">
-                    <img src="../img/logo1.png" class="img-fluid" alt="">
+                    <img src="../img/logo.png" class="img-fluid" alt="">
                 </p>
-                <h1 class="h2 my-3 mb-4 text-center brand-color">Admin Login</h1>
+                <h1 class="h4 my-4 mb-4 text-center brand-color">Admin Login</h1>
                 <form method="post" action="">
                     <div class="mb-2">
                         <label for="email" class="form-label">Email</label>
