@@ -27,25 +27,26 @@
     $title = 'Login to your account';
     $login_page = 'active';
     require_once '../include/head.php';
+    require_once '../tools/functions.php';
 ?>
 
 <body>
-  <?php
-      require_once '../include/header-user.php';
+<?php
+    require_once '../include/header-user.php';
   ?>
 
   <div class="login">
     <div class="row">
-      <div class="col-7 login-left text-center">
+      <div class="col-lg-6 col-sm-6 col-md-6 login-left text-center">
         <div class="left-container py-5">
-          <h1>Hello, User!</h1>
-          <p class="mt-3 mx-5">Log in to book appointments with us and for us to be able to check up on your fur friend's health.</p>
-          <p class="alr mt-5">Don't have an account yet?</p>
-          <a href="signup.html" class="btn px-5 py-1 align-self-center">Sign Up</a>
+          <h1>Hello, Hooman!</h1>
+          <p class="mt-2">Log in to book appointments with us and for us to be able to check up on your fur friend's health.</p>
+          <p class="alr">Don't have an account yet?</p>
+          <a href="signup.php" class="btn px-5 py-1 align-self-center">Sign Up</a>
         </div>
       </div>
-      <div class="col-5 login-right">
-        <h1 class="mb-1">Login to your account</h1>
+      <div class="col-lg-6 col-sm-6 col-md-6 login-right">
+        <h2 class="mb-1 mx-auto">Login to your account</h2>
         <div class="user-signup-container">
           <form action="" method="POST" class="login-user">
             <div class="py-3">
