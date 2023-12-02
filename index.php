@@ -120,7 +120,7 @@
       <p class="my-5 text-center">Purrpaws Vets dedicate their lives to the well-being of animals. They possess a unique blend of medical expertise, empathy, and a genuine love for animals. Their commitment to providing the best care possible is unwavering, as they work tirelessly to diagnose, treat, and prevent illnesses and injuries in our beloved pets and animals.</p>
     
       <div class="homeBtn">
-        <a class="btn home-vets px-3 py-2" href="veterinarians.php" role="button">Learn More</a>
+        <a class="btn home-vets px-3 py-2" href="./user/veterinarians.php" role="button">Learn More</a>
       </div>
     </div>
 
