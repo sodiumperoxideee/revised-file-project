@@ -31,6 +31,7 @@
                             <div class="input-group">
                                 <input type="text" name="keyword" id="keyword" placeholder="Search Appointment" class="form-control">
                                 <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
+                                <a href="addappointments.php" class="btn brand-bg-color ms-2">Add Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -49,9 +50,9 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Appointment ID</th>
-                                    <th scope="col">User Name</th>
-                                    <th scope="col">Service Name</th>
-                                    <th scope="col">Vet Name</th>
+                                    <th scope="col">User ID</th>
+                                    <th scope="col">Service ID</th>
+                                    <th scope="col">Vet ID</th>
                                     <th scope="col">Appt. Date</th>
                                     <th scope="col">Appt. Time</th>
                                 </tr>
@@ -64,9 +65,9 @@
                                     <tr>
                                         <td><?= $counter ?></td>
                                         <td><?= $item['appointment_id'] ?></td>
-                                        <td><?= $item['firstname'] . ' ' . $item['lastname'] ?></td>
-                                        <td><?= $item['service_name'] ?></td>
-                                        <td><?= $item['vetName'] ?></td>
+                                        <td><?= $item['user_id'] ?></td>
+                                        <td><?= $item['service_id'] ?></td>
+                                        <td><?= $item['vetID'] ?></td>
                                         <td><?= $item['date'] ?></td>
                                         <td><?= $item['time'] ?></td>
                                     </tr>
