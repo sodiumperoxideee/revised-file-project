@@ -126,7 +126,7 @@
 
     <div class="section-2 mx-5 mb-5">
       <div class="row">
-        <h1 class="">Our Clinic Facilities</h1>
+        <h1 class="mt-5">Our Clinic Facilities</h1>
         <p class="section-2-p px-4 my-2 mt-3 text-center">Purrpaws Vet Clinic is a dedicated sanctuary for your furry friends. We understand that pets are cherished family members, and their well-being is our top priority. We pride ourselves on providing a holistic approach to pet healthcare, offering a wide range of services designed to ensure your pets' health, happiness, and longevity.
         </p>
         <div class="homeBtn mt-4">
