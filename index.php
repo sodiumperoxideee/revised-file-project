@@ -24,7 +24,7 @@
         </div>
         <div class="homeBtns mt-5">
             <div class="homeBtn">
-                <a class="btn mx-2 px-3 py-2" href="book.php" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an Appointment</a>
+                <a class="btn mx-2 px-3 py-2" href="./user/book.php" role="button">Book an Appointment</a>
             </div>
             <div class="homeBtn">
                 <a class="emergencyBtn btn mx-2 px-3 py-2" href="/user/emergency-care.php" role="button">Emergency Care</a>
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -113,7 +113,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="home-vets-container flex-column mx-5">
       <h1 class="mx-5 text-center">Our Veterinarians are compassionate professionals</h1>

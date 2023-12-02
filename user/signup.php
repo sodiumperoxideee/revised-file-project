@@ -10,34 +10,34 @@
   require_once '../tools/functions.php';
 
   if(isset($_POST['signup'])){
-      $client = new Client();
-      //sanitize
-      $client->firstname = htmlentities($_POST['firstname']);
-      $client->lastname = htmlentities($_POST['lastname']);
-      if(isset($_POST['signup'])){
-        $client->gender = htmlentities($_POST['gender']);
-      }else{
-          $client->gender = '';
-      }
-      $client->email = htmlentities($_POST['email']);
-      $client->password = htmlentities($_POST['password']);
-      $client->phoneno = htmlentities($_POST['phoneno']);
+    $client = new Client();
+    //sanitize
+    $client->firstname = htmlentities($_POST['firstname']);
+    $client->lastname = htmlentities($_POST['lastname']);
+    if(isset($_POST['signup'])){
+      $client->gender = htmlentities($_POST['gender']);
+    }else{
+        $client->gender = '';
+    }
+    $client->email = htmlentities($_POST['email']);
+    $client->password = htmlentities($_POST['password']);
+    $client->phoneno = htmlentities($_POST['phoneno']);
 
-      //validate inputs of the users
-      if (validate_field($client->firstname) && 
-      validate_field($client->lastname) &&
-      validate_field($client->gender) &&
-      validate_field($client->email) &&
-      validate_cpw($client->password, $_POST['confirmpassword']) &&
-      validate_field($client->phoneno)){
-          //proceed with saving
-          if($client->add()){ 
-              header('location: pet-signup.php');
-              $message = 'You successfully created an account!';
-          }else{
-            echo 'An error occured while adding in the database.';
-          }
-      }
+    //validate inputs of the users
+    if (validate_field($client->firstname) && 
+    validate_field($client->lastname) &&
+    validate_field($client->gender) &&
+    validate_field($client->email) &&
+    validate_cpw($client->password, $_POST['confirmpassword']) &&
+    validate_field($client->phoneno)){
+        //proceed with saving
+        if($client->add()){ 
+            header('location: pet-signup.php');
+            $message = 'You successfully created an account!';
+        }else{
+          echo 'An error occured while adding in the database.';
+        }
+    }
   }
 
 ?>
