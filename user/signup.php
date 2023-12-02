@@ -62,8 +62,8 @@
           <div class="col-lg-6 col-sm-6 col-md-6 signup-left text-center">
             <div class="left-container py-5">
               <h1>Hello, welcome!</h1>
-              <p class="mt-3">Please enter your details to sign up to book appointments for your fur friends with ease.</p>
-              <p class="alr mt-5">Already have an account?</p>
+              <p class="mt-2">Please enter your details to sign up to book appointments for your fur friends with ease.</p>
+              <p class="alr">Already have an account?</p>
               <a href="login.php" class="btn px-5 py-1 align-self-center">Login</a>
             </div>
           </div>
