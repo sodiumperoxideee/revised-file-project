@@ -59,16 +59,16 @@
 
   <div class="signup">
       <div class="row">
-          <div class="col-7 signup-left text-center">
+          <div class="col-lg-6 col-sm-6 col-md-6 signup-left text-center">
             <div class="left-container py-5">
               <h1>Hello, welcome!</h1>
-              <p class="mt-3 mx-5">Please enter your details to sign up to book appointments for your fur friends with ease.</p>
+              <p class="mt-3">Please enter your details to sign up to book appointments for your fur friends with ease.</p>
               <p class="alr mt-5">Already have an account?</p>
               <a href="login.php" class="btn px-5 py-1 align-self-center">Login</a>
             </div>
           </div>
-          <div class="col-5 signup-right my-5">
-            <h1 class="">Create an account</h1>
+          <div class="col-lg-6 col-sm-6 col-md-6 signup-right my-5">
+            <h2 class="mb-1 mx-auto">Create an account</h2>
               <div class="user-signup-container">
                   <form action="" method="post" class="signup-user">
                     <div class="form-group row">

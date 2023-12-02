@@ -620,7 +620,7 @@ OF SIGN UP*/
     justify-content: center;
     flex-direction: column;
     color: white;
-    background: url('../img/loginwallp.jpeg');
+    background: linear-gradient(to top, rgba(245, 246, 252, 0), rgba(8, 45, 56, 0.6)), url('../img/loginwallp.jpeg');
     background-size: cover;
     background-position: center;
 }
@@ -635,7 +635,7 @@ OF SIGN UP*/
 }
 
 .alr{
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .forgotpass{
