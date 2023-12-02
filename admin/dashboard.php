@@ -66,7 +66,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <h2 class="h3 brand-color">New Orders</h2>
+                    <h2 class="h3 brand-color">New Appointments</h2>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>
