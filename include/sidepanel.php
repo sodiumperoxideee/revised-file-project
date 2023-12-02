@@ -32,12 +32,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $reports_page ?>" href="../admin/reports.php">
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                    Reports
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link <?= $services_page ?>" href="../admin/services.php">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     Services
@@ -47,12 +41,6 @@
                 <a class="nav-link <?= $facilities_page ?>" href="../admin/facilities.php">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     Clinic Facilities
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link <?= $settings_page ?>" href="../admin/settings.php">
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                    Settings
                 </a>
             </li>
             <hr class="d-lg-none">

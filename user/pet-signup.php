@@ -28,12 +28,10 @@
         //proceed with saving
         if($pet->add()){ 
             header('location: login.php');
-            echo "<script>alert('Your pet's info has been successfully saved!');window.location.href='index.php'</script>";
         }else{
           echo 'An error occured while adding in the database.';
         }
     }
-    var_dump($pet);
   }
 ?>
 
