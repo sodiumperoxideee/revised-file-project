@@ -1,4 +1,24 @@
+<?php
+    session_start();
 
+    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
+        header('location: dashboard.php');
+    }
+
+    require_once('../classes/account.class.php');
+    
+    if (isset($_POST['login'])) {
+        $account = new Account();
+        $account->email = htmlentities($_POST['email']);
+        $account->password = htmlentities($_POST['password']);
+        if ($account->sign_in_staff()){
+            $_SESSION['user'] = 'staff';
+            header('location: dashboard.php');
+        }else{
+            $error =  'Invalid email/password. Try again.';
+        }
+    }
+?>
 
 <style>
     .container-fluid {
