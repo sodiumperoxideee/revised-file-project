@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-md-6 signup-right my-5">
-            <h2 class="mb-1 mx-auto">Create an account</h2>
+            <h2 class="mb-1 mx-auto text-center">Create an account</h2>
               <div class="user-signup-container">
                   <form action="" method="post" class="signup-user">
                     <div class="form-group row">
