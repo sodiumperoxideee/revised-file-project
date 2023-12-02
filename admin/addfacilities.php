@@ -88,15 +88,15 @@
                                 <label class="form-label">Availability</label>
                                 <div class="d-flex">
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="available" name="availability" value="In Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } ?>>
+                                        <input type="radio" class="form-check-input" id="available" name="availability" value="Available" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } ?>>
                                         <label class="form-check-label" for="available">Available</label>
                                     </div>
                                     <div class="form-check ms-3">
-                                        <input type="radio" class="form-check-input" id="outOrder" name="availability" value="In Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } ?>>
+                                        <input type="radio" class="form-check-input" id="outOrder" name="availability" value="Out of Order" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'In Stock') { echo 'checked'; } ?>>
                                         <label class="form-check-label" for="outOrder">Out of Order</label>
                                     </div>
                                     <div class="form-check ms-3">
-                                        <input type="radio" class="form-check-input" id="underCons" name="availability" value="Out of Stock" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Out of Stock') { echo 'checked'; } ?>>
+                                        <input type="radio" class="form-check-input" id="underCons" name="availability" value="Under Construction" <?php if(isset($_POST['availability']) && $_POST['availability'] == 'Out of Stock') { echo 'checked'; } ?>>
                                         <label class="form-check-label" for="underCons">Under Construction</label>
                                     </div>
                                 </div>

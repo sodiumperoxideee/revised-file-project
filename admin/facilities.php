@@ -74,7 +74,8 @@
                                         <td><?= $item['facilitiesName'] ?></td>
                                         <td><?= $item['description'] ?></td>
                                         <td><?= $item['availability'] ?></td>
-                                        <td class="text-center"><a href="editfacilities.php?facilitiesID=<?= $item['facilitiesID'] ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                        <td class="text-center"><a href="editfacilities.php?facilitiesID=<?= $item['facilitiesID'] ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        <a href="deletefacilities.php?facilitiesID=<?= $item['facilitiesID'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                     </tr>
                         <?php
                                     $counter++;
