@@ -4,7 +4,7 @@ class Database{
     private $host = 'localhost';
     private $username = 'root';
     private $password = '';
-    private $database = 'vetclinic';
+    private $database = 'spicypizzaphp';
     protected $connection;
 
     function connect(){

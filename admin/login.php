@@ -20,20 +20,31 @@
     }
 ?>
 
+<style>
+    .container-fluid {
+        background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgba(8, 45, 56, 0.9)), url('../img/loginadm.jpg');
+        background-size: cover;
+    }
+    .admin-login-page {
+        background-color: white;
+        border-radius: 20px;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'Staff Login';
+    $title = 'Admin Login';
     require_once('../include/head.php');
 ?>
 <body>
     <main>
         <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-            <div class="admin-login-page p-4">
+            <div class="admin-login-page p-5 mx-md-auto w-md-50">
                 <p class="text-center">
-                    <img src="../img/logo1.png" class="img-fluid" alt="">
+                    <img src="../img/logo.png" class="img-fluid" alt="">
                 </p>
-                <h1 class="h2 my-3 mb-4 text-center brand-color">Admin Login</h1>
+                <h1 class="h4 my-4 mb-4 text-center brand-color">Admin Login</h1>
                 <form method="post" action="">
                     <div class="mb-2">
                         <label for="email" class="form-label">Email</label>

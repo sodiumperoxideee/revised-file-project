@@ -1044,8 +1044,6 @@ p span {
 
 .img-fluid {
     max-width: 50%;
-    border-radius: 50px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
 }
 
 .justified-p {

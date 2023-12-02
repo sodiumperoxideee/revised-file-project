@@ -30,18 +30,21 @@
                     <div class="row g-2 mb-2 m-0">
                         <div id="MyButtons" class="d-flex mb-md-2 mb-lg-0 col-12 col-md-auto"></div>
                         <div class="search-keyword col-12 flex-lg-grow-0 d-flex"> 
-                        <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0">
-                            <select name="staff-status" id="staff-status" class="form-select me-md-5">
-                                <option value="">All Availability</option>
-                                <option value="Active">Available</option>
-                                <option value="Deactivated">Unavailable</option>
-                            </select>
-                        </div>
-                            <div class="input-group">
-                                <input type="text" name="keyword" id="keyword" placeholder="Search Facility" class="form-control">
-                                <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
-                                <a href="addfacilities.php" class="btn brand-bg-color ms-2">Add Facility</a>
+                            <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0">
+                                <select name="staff-status" id="staff-status" class="form-select me-md-5">
+                                    <option value="">All Availability</option>
+                                    <option value="Active">Available</option>
+                                    <option value="Deactivated">Out of Order</option>
+                                    <option value="Deactivated">Under Construction</option>
+                                </select>
                             </div>
+                            <form action="" method="get">
+                                <div class="input-group">
+                                    <input type="text" name="search" id="search" placeholder="Search Facility" class="form-control">
+                                    <button class="btn btn-outline-secondary brand-bg-color" name="submit" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
+                                    <a href="addfacilities.php" class="btn brand-bg-color ms-2">Add Facility</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div id="table-container">
