@@ -21,20 +21,20 @@
     require_once '../classes/database.php';
 
     
-    // $database = new Database();
-    // $pdo = $database->connect();
+    $database = new Database();
+    $pdo = $database->connect();
 
-    // if (!$pdo) {
-    //     die("Database connection error");
-    // }
+    if (!$pdo) {
+        die("Database connection error");
+    }
 
-    // $sql = "SELECT appointments.*, CONCAT(user.firstname, ' ', user.lastname) AS user_name, services.service_name, vets.vetName
-    //     FROM appointments
-    //     JOIN user ON appointments.user_id = user.user_id
-    //     JOIN services ON appointments.service_id = services.service_id
-    //     JOIN vets ON appointments.vetID = vets.vetID";
+    $sql = "SELECT appointments.*, CONCAT(user.firstname, ' ', user.lastname) AS user_name, services.service_name, vets.vetName
+        FROM appointments
+        JOIN user ON appointments.user_id = user.user_id
+        JOIN services ON appointments.service_id = services.service_id
+        JOIN vets ON appointments.vetID = vets.vetID";
 
-    // $result = $pdo->query($sql);    
+    $result = $pdo->query($sql);    
 
 
     $client = new Client();

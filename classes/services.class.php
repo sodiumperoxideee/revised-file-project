@@ -53,6 +53,19 @@ Class Services{
         }	
     }
 
+    function delete($service_id) {
+        $sql = "DELETE FROM services WHERE service_id = :service_id";
+
+        $query = $this->db->connect()->prepare($sql);
+        $query->bindParam(':service_id', $service_id);
+
+        if ($query->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     function fetch($record_id){
         $sql = "SELECT * FROM services WHERE service_id = :service_id;";
         $query=$this->db->connect()->prepare($sql);
