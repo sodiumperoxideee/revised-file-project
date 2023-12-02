@@ -32,8 +32,7 @@
     validate_field($client->phoneno)){
         //proceed with saving
         if($client->add()){ 
-            header('location: pet-signup.php');
-            $message = 'You successfully created an account!';
+          echo "<script>alert('You successfully created an account!');window.location.href='pet-signup.php'</script>";
         }else{
           echo 'An error occured while adding in the database.';
         }
@@ -50,6 +49,7 @@
     $signup_page = 'active';
     require_once '../include/head.php';
     require_once '../tools/functions.php';
+    require_once '../include/js.php';
 ?>
 
 <body>

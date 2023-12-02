@@ -41,7 +41,7 @@
           <h1>Hello, User!</h1>
           <p class="mt-3 mx-5">Log in to book appointments with us and for us to be able to check up on your fur friend's health.</p>
           <p class="alr mt-5">Don't have an account yet?</p>
-          <a href="signup.html" class="btn px-5 py-1 align-self-center">Sign Up</a>
+          <a href="signup.php" class="btn px-5 py-1 align-self-center">Sign Up</a>
         </div>
       </div>
       <div class="col-5 login-right">
