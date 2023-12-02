@@ -15,6 +15,7 @@
       <p class="my-1 ms-2">185 Don Alfaro St, Zamboanga City, Zamboanga del Sur</p>
       <p class="my-1 ms-2">(+63) 927 5150 836</p>
       <p class="my-1 ms-2">purrpawsvetclinic@gmail.com</p>
+      <p class="my-1 ms-2">For after-hour emergencies, please call <a href="tel:+63275150836">+63 927 5150 836</a>.</p>
     </div>
     <div class="col three my-1 mx-5 pe-5"> 
       <h5>Hours of Operation</h5>
@@ -23,10 +24,10 @@
       <p class="my-1 ms-2">Sunday and Monday: Closed</p>
     </div>
   </div>
-  <div class="uh d-flex justify-content-center">
-      <p class="my-3">For after-hour emergencies, please call <a href="tel:+63275150836">+63 927 5150 836</a>.</p>
+  <div class="uh d-flex justify-content-center border-bottom mx-3 my-3">
+      
   </div>
-  <div class="col d-flex justify-content-center">
+  <div class="col d-flex justify-content-center mt-3">
             <p>&copy; 2023 Purrpaws. All rights reserved.</p>
         </div>
 </footer>
