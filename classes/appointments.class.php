@@ -49,7 +49,7 @@ class Appointment{
     }
 
     function show(){
-        $sql = "SELECT * FROM appointments ORDER BY appointment_id ASC, lastname ASC;";
+        $sql = "SELECT * FROM appointments ORDER BY appointment_id ASC";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){
