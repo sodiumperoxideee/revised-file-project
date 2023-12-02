@@ -19,7 +19,7 @@
   <main>
     <div class="section-0">
         <div class="home-headings">
-            <h1>Purrpaws Cares with a Clear Purpose</h1>
+            <h1 class="mx-auto">Purrpaws Cares with a Clear Purpose</h1>
             <h5 style="text-align: center;" class="mt-1 mb-3">Here at Purrpaws Veterinary Clinic, we have compassionate care and expertise come together to fulfill every cat and dog's purposeful health journey.</h5> 
         </div>
         <div class="homeBtns mt-5">
@@ -116,7 +116,7 @@
     </div> -->
 
     <div class="home-vets-container flex-column mx-5">
-      <h1 class="mx-5 text-center">Our Veterinarians are compassionate professionals</h1>
+      <h1 class="mx-5 mt-3 text-center">Our Veterinarians are compassionate professionals</h1>
       <p class="my-5 text-center">Purrpaws Vets dedicate their lives to the well-being of animals. They possess a unique blend of medical expertise, empathy, and a genuine love for animals. Their commitment to providing the best care possible is unwavering, as they work tirelessly to diagnose, treat, and prevent illnesses and injuries in our beloved pets and animals.</p>
     
       <div class="homeBtn">
@@ -124,7 +124,7 @@
       </div>
     </div>
 
-    <div class="section-2 mx-5 mb-5 px-5">
+    <div class="section-2 mx-5 mb-5 ">
       <div class="row">
         <h1 class="">Our Clinic Facilities</h1>
         <p class="section-2-p px-4 my-2 mt-3 text-center">Purrpaws Vet Clinic is a dedicated sanctuary for your furry friends. We understand that pets are cherished family members, and their well-being is our top priority. We pride ourselves on providing a holistic approach to pet healthcare, offering a wide range of services designed to ensure your pets' health, happiness, and longevity.
