@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    
+
 <?php
   
     session_start();
@@ -8,54 +6,58 @@
     session_destroy();
     header('location: login.php');
     } else{
-    include '../include/header-logged-in-user.php'; // Display navigation based on login status
-    $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+    include '../include/header-logged-in-user.php';
+    
     }
 
-    $title = 'Book Now!';
+    $title = 'Book - Schedule an appointment at Purrpaws';
     $book_page = 'active';
     require_once('../include/head.php');
     require_once '../classes/services.class.php';
     require_once '../classes/vets.class.php';
+    require_once '../classes/client.class.php';
     require_once '../classes/appointments.class.php';
     require_once '../tools/functions.php';
     require_once '../classes/database.php';
 
     
-    $database = new Database();
-    $pdo = $database->connect();
+    // $database = new Database();
+    // $pdo = $database->connect();
 
-    // Check if the database connection is valid
-    if (!$pdo) {
-        die("Database connection error");
-    }
+    // if (!$pdo) {
+    //     die("Database connection error");
+    // }
 
-    $sql = "SELECT appointments.*, CONCAT(user.firstname, ' ', user.lastname) AS user_name, services.service_name, vets.vetName
-        FROM appointments
-        JOIN user ON appointments.user_id = user.user_id
-        JOIN services ON appointments.service_id = services.service_id
-        JOIN vets ON appointments.vetID = vets.vetID";
+    // $sql = "SELECT appointments.*, CONCAT(user.firstname, ' ', user.lastname) AS user_name, services.service_name, vets.vetName
+    //     FROM appointments
+    //     JOIN user ON appointments.user_id = user.user_id
+    //     JOIN services ON appointments.service_id = services.service_id
+    //     JOIN vets ON appointments.vetID = vets.vetID";
 
-    $result = $pdo->query($sql);    
-    $appt = $result->fetchAll(PDO::FETCH_ASSOC);
+    // $result = $pdo->query($sql);    
 
+
+    $client = new Client();
+    $clientArray = $client->show();
+    
     $services = new Services();
     $servicesArray = $services->show();
     
     $vets = new Vets();
     $vetsArray = $vets->show();
 
+    
     if(isset($_POST['submit'])){
-        $appt = new Appointment();
-        //sanitize
-        $appt->user_id = htmlentities($_POST['user_id']);
+        $appt = new Appointment(); 
+        
+        $appt->user_id = $_SESSION['user_id'];
         $appt->service_id = htmlentities($_POST['service_id']);
         $appt->vetID = htmlentities($_POST['vetID']);
         $appt->time = htmlentities($_POST['time']);
         $appt->date = htmlentities($_POST['date']);
         
         //validate inputs of the users
-        if (validate_field($appt->user_id) &&
+        if (
         validate_field($appt->service_id) && 
         validate_field($appt->vetID) &&
         validate_field($appt->time) &&
@@ -68,11 +70,13 @@
               echo 'An error occured while trying to save your booking request';
             }
         }
-    var_dump($appt);
+        var_dump($appt);
     }
   
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+    
 
 <body>
     <main>
@@ -92,7 +96,8 @@
                     <div class="book-services-title my-5 mb-2">
                         <h4>Choose from any of our services</h4>
                     </div>
-                    <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user_id); ?>">
+                    <input type="hidden" name="user_id" value="<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>">
+
                     <select class="book-service py-2" name="service_id">
                         <option  name="service_id" id="service_id" value="<?php if(isset($_POST['service_id'])){echo $_POST['service_id'];} ?>" disabled selected>Select a service</option>
                         <?php
