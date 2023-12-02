@@ -47,7 +47,7 @@
                                 <input type="text" name="keyword" id="keyword" placeholder="Search Facility" class="form-control">
                                 <button class="btn btn-outline-secondary brand-bg-color" type="button"><i class="fa fa-search color-white" aria-hidden="true"></i></button>
                                 <a href="addstaff.php" class="btn brand-bg-color ms-2">Add Staff</a>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                     <div id="table-container">
