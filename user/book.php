@@ -98,7 +98,7 @@
                     </div>
                     <input type="hidden" name="user_id" value="<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>">
 
-                    <select class="book-service py-2" name="service_id">
+                    <select class="form-select form-select-md book-service py-2" name="service_id">
                         <option  name="service_id" id="service_id" value="<?php if(isset($_POST['service_id'])){echo $_POST['service_id'];} ?>" disabled selected>Select a service</option>
                         <?php
                         if ($servicesArray) {
@@ -121,7 +121,7 @@
                         
                     
                     <h4>Choose a Purrpaws Clinic Veterinarian</h4>
-                    <select class="book-service py-2" name="vetID">
+                    <select class="form-select form-select-md book-service py-2" name="vetID">
                         <option name="vetID" id="vetID" value="<?php if(isset($_POST['vetID'])){echo $_POST['vetID'];} ?>" disabled selected>Select a vet</option>
                         <?php
                         if ($vetsArray) {
